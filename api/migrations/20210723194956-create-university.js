@@ -1,0 +1,37 @@
+'use strict';
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('Universities', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      name: {
+        type: Sequelize.STRING
+      },
+      emailPattern: {
+        type: Sequelize.STRING(150)
+      },
+      email: {
+        type: Sequelize.STRING(150)
+      },
+      isenable: {
+        type: Sequelize.BOOLEAN
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
+
+  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Universities');
+  }
+};

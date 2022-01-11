@@ -1,0 +1,15 @@
+POST http://localhost:3168/api/review/create HTTP/1.1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik1vaGFtbWFkIiwiZW1haWwiOiJtb2hhbW1hZC5yb3NoYW5mZWtyQGhvdG1haWwuY29tIiwic2NvcGUiOlsidHV0b3IiLCJhZG1pbiJdLCJpYXQiOjE2MzU3MTcwOTYsImV4cCI6MTYzNjMyMTg5Nn0.bjpSylU7qyhSVCMrWbB-D5jhVJtx_dW78p8ifZxYZnI
+
+{
+  "comment": "dfsdfsdfsdf",
+  "lessonId": "1",
+  "rate": "6" ,
+  "tutorId": "1"
+}
+
+
+
+
+

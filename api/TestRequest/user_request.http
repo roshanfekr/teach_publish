@@ -1,0 +1,20 @@
+
+
+###
+
+POST http://localhost:3168/api/user/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "mohammad.roshanfekr@hotmail.com",
+  "password": "123!@#123"
+}
+
+###
+
+GET http://localhost:8080/api/user HTTP/1.1
+content-type: application/json
+
+
+
+

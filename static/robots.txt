@@ -1,0 +1,6 @@
+user-agent: *
+disallow: /admin
+disallow: /login
+
+Sitemap: https://teach.com/sitemap.xml
+host: https://teach.com/

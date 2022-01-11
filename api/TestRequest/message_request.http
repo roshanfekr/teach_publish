@@ -1,0 +1,22 @@
+POST http://localhost:8080/api/message/create HTTP/1.1
+content-type: application/json
+
+{
+  "name": "seyed milad Mousavi",
+  "tel": "09119358875",
+  "email": "admin@yahoo.com",
+  "msg": "hi ....."
+}
+
+###
+
+POST http://localhost:8080/api/messages HTTP/1.1
+content-type: application/json
+
+{
+
+}
+
+
+
+###

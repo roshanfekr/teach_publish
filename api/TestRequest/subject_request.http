@@ -1,0 +1,33 @@
+
+
+POST http://localhost:8080/api/subject/items HTTP/1.1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6bnVsbCwiZW1haWwiOiJ0QHlhaG9vLmNvbSIsInJvbGVzIjpbInR1dG9yIl0sImlhdCI6MTYyODA2MzQyOCwiZXhwIjoxNjI4NjY4MjI4fQ.6_zESQFTXg79zBSif3Q2eitLK_Fl6lVrxKEKME7jefg
+
+{
+
+}
+
+###
+
+POST http://localhost:8080/api/subject/create HTTP/1.1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6bnVsbCwiZW1haWwiOiJ0QHlhaG9vLmNvbSIsInJvbGVzIjpbInR1dG9yIl0sImlhdCI6MTYyODA2MzQyOCwiZXhwIjoxNjI4NjY4MjI4fQ.6_zESQFTXg79zBSif3Q2eitLK_Fl6lVrxKEKME7jefg
+
+{
+  "lessonId": 1
+}
+
+
+
+###
+
+POST http://localhost:8080/api/subject/delete HTTP/1.1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6bnVsbCwiZW1haWwiOiJ0QHlhaG9vLmNvbSIsInJvbGVzIjpbInR1dG9yIl0sImlhdCI6MTYyODA2MzQyOCwiZXhwIjoxNjI4NjY4MjI4fQ.6_zESQFTXg79zBSif3Q2eitLK_Fl6lVrxKEKME7jefg
+
+{
+  "lessonId": "1"
+}
+
+###

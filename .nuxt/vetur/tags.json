@@ -1,0 +1,11 @@
+{
+  "IoSocketStatus": {
+    "description": "Auto imported from node_modules/nuxt-socket-io/lib/components/SocketStatus.js"
+  },
+  "Booklesson": {
+    "description": "Auto imported from components/booklesson.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  }
+}

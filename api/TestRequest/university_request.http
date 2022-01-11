@@ -1,0 +1,15 @@
+POST http://localhost:8080/api/university/create HTTP/1.1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjpudWxsLCJlbWFpbCI6Im1AeWFob28uY29tIiwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNjI3MjEzMTE2LCJleHAiOjE2Mjc4MTc5MTZ9.Z2b3OZ14eCWm7IFRsRKH16RCwbVfgRBB_gn3G3aUyow
+
+
+{
+  "name": "test",
+  "email": "a.yahoo.com",
+  "emailPattern": "@aaa.com"
+}
+
+
+
+
+###
