@@ -104,6 +104,7 @@ __webpack_require__.r(__webpack_exports__);
   "subjects.title": "Course",
   "subjects.label": "Course",
   "subjects.subject": "What Course do you want to tutor?",
+  "subjects.university": "Select a university?",
   "subjects.description": "Description",
   "subjects.add": "Add",
   "subjects.grade_placeholder": "What was your grade for this course?",
@@ -359,7 +360,14 @@ __webpack_require__.r(__webpack_exports__);
   "admin.lessons.universities": "University",
   "admin.lessons.csvtext": "CSV text",
   "page.first.universities.placeholder": "Please select a university",
-  "page.first.subjets.placeholder": "What subject do you want to learn?"
+  "page.first.subjets.placeholder": "What subject do you want to learn?",
+  "take.lesson": "Take Lesson",
+  "admin.university.subdomain": "Subdomain",
+  "admin.university.subdomain.placeholder": "ex -> torento.tuteloop.ca",
+  "admin.university.subdomain.required": "Required",
+  "admin.lessons.csv.upload.label": "CSV File",
+  "noRecordFound": "No Record Found",
+  "emailPatternNotValid": "Your email does not belong to our universities"
 });
 
 /***/ })
