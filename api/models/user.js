@@ -12,11 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     headline: DataTypes.TEXT,
     bioMore: DataTypes.TEXT,
     fileId: DataTypes.INTEGER,
+    universityId: DataTypes.INTEGER,
     program: DataTypes.STRING,
-    transcript_fileId:DataTypes.INTEGER,
     training_method:DataTypes.INTEGER,
     disable: DataTypes.BOOLEAN,
-    deleted: DataTypes.BOOLEAN
+    deleted: DataTypes.BOOLEAN,
+    receiveEmailOnMessage: DataTypes.BOOLEAN,
+    receiveEmailOnRequest: DataTypes.BOOLEAN,
   }, {});
   User.associate = function (models) {
     User.hasMany(models.UserRole);
@@ -26,11 +28,13 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Experience);
     User.hasMany(models.TutorTiming);
     User.hasMany(models.Certificate);
+    User.hasMany(models.Transcripts);
     User.hasMany(models.MyLesson , {as:"TutorMyLessons" ,foreignKey: 'tutorUserId'});
     User.hasMany(models.MyLesson  , {as:"UserMyLessons" , foreignKey: 'userId'});
     User.belongsTo(models.File, { foreignKey: 'fileId'})
+    User.belongsTo(models.University, { foreignKey: 'universityId'})
     User.hasMany(models.RateOverall,{foreignKey: 'tutorId'});
-    User.hasMany(models.Gender , {foreignKey: 'genderId'});
+    User.belongsTo(models.Gender , {foreignKey: 'genderId'});
     // Order.belongsTo(models.User);
     // associations can be defined here
   };

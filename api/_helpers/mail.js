@@ -7,14 +7,14 @@ module.exports = {
         port: 465,               // true for 465, false for other ports
         host: "mail.tuteloop.ca",
         auth: {
-          user: 'support@tuteloop.ca',
+          user: 'teamsupport@tuteloop.ca',
           pass: 'h}Op(}by]mPM',
         },
         secure: true,
       });
 
       const mailData = {
-        from: 'support@tuteloop.ca',  // sender address
+        from: 'teamsupport@tuteloop.ca',  // sender address
         to: to ,   // list of receivers
         subject: subject,
         text: text,

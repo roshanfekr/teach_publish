@@ -1,7 +1,7 @@
 {
   "entry": "server.js",
   "files": {
-    "59.js": "59.js",
+    "61.js": "61.js",
     "components/booklesson.js": "components/booklesson.js",
     "components/io-socket-status.js": "components/io-socket-status.js",
     "components/logo.js": "components/logo.js",
@@ -17,6 +17,8 @@
     "pages/admin/language-manager.js": "pages/admin/language-manager.js",
     "pages/admin/lessons.js": "pages/admin/lessons.js",
     "pages/admin/notification.js": "pages/admin/notification.js",
+    "pages/admin/online-user.js": "pages/admin/online-user.js",
+    "pages/admin/report-dashboard.js": "pages/admin/report-dashboard.js",
     "pages/admin/reviews.js": "pages/admin/reviews.js",
     "pages/admin/university.js": "pages/admin/university.js",
     "pages/admin/user-change.js": "pages/admin/user-change.js",
@@ -63,7 +65,7 @@
     "server.js": "server.js"
   },
   "maps": {
-    "59.js": "59.js.map",
+    "61.js": "61.js.map",
     "components/booklesson.js": "components/booklesson.js.map",
     "components/io-socket-status.js": "components/io-socket-status.js.map",
     "components/logo.js": "components/logo.js.map",
@@ -79,6 +81,8 @@
     "pages/admin/language-manager.js": "pages/admin/language-manager.js.map",
     "pages/admin/lessons.js": "pages/admin/lessons.js.map",
     "pages/admin/notification.js": "pages/admin/notification.js.map",
+    "pages/admin/online-user.js": "pages/admin/online-user.js.map",
+    "pages/admin/report-dashboard.js": "pages/admin/report-dashboard.js.map",
     "pages/admin/reviews.js": "pages/admin/reviews.js.map",
     "pages/admin/university.js": "pages/admin/university.js.map",
     "pages/admin/user-change.js": "pages/admin/user-change.js.map",

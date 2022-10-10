@@ -9,54 +9,26 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
 
-  async create(req, res) {
+  async getUserUniversity(req, res) {
     try {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(422).send({errors: errors.mapped()});
-      }
-      //   name: DataTypes.STRING,
-      //   emailPattern: DataTypes.STRING,
-      //   email: DataTypes.STRING,
-      //   isenable: DataTypes.BOOLEAN
-      const name = req.body.name
-      const emailPattern = req.body.emailPattern
-      const email = req.body.email
+      let userId = req.authUser.id;
+      let email = req.authUser.email;
+      let email_host = email.split('@')[1]
 
-      const findUniversityByemail = await module.exports.findByEmail(email)
-      if(findUniversityByemail != null)
-        return res.status(422).send("email is reserved")
+      var activeUser = await user.findOne( {where: {id:userId}})
 
-      let uniCollection = await universityModel
-        .create({
-          name: name, emailPattern: emailPattern , email : email
-        });
-      res.status(201).send(uniCollection);
+      const uni = await universityModel.findOne( {where: {id: activeUser.universityId}})
 
+      return res.status(200).send({ret: uni});
 
     } catch (e) {
       console.log(e);
-      res.status(400).send(e);
+      return res.status(401).send(0);
     }
+
+
 
   },
-
-
-
-  async findByEmail(value) {
-    try {
-      const uniCollection = await universityModel.findOne(
-        {where: {email: value}}
-      )
-      return uniCollection
-    } catch (e) {
-      console.log(e);
-      return null;
-    }
-
-
-
-  }
 
 
 }

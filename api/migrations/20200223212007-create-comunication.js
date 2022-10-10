@@ -36,7 +36,7 @@ module.exports = {
       },
       onDelete: 'cascade',
       onUpdate: 'cascade'
-    }));;
+    }));
 
   },
   down: (queryInterface, Sequelize) => {

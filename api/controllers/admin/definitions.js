@@ -5,22 +5,29 @@ const universityModel = require('../../models').University;
 const jwt = require('../../_helpers/jwt')
 const bcrypt = require('bcryptjs');
 const db = require("../../models");
+const fs = require("fs");
+const {Transcripts: transcriptModel_, fileModel, universityAdminModel} = require("../../models");
+const path = require("path");
+const {includes} = require("core-js/internals/array-includes");
 
 module.exports = {
   async getAllLessons(req, res) {
     try {
-      var filters = []
-      var filters_uni = []
+      var filters = {}
+      var filters_uni = {}
       if (req.body.uniId !== undefined && req.body.uniId !== null && req.body.uniId > 0)
-        filters.push({universityId: req.body.uniId})
+        filters.universityId = req.body.uniId
 
       if (req.body.host !== undefined && req.body.host !== null)
-        filters_uni.push({host: req.body.host})
+        filters_uni.host= req.body.host
 
-      filters.push({isEnable: 1})
+      filters.isEnable = 1
 
-      const lessonCollection = await lessonModel.findAll({where: {[sequelize.Op.and]: filters}
-        , include:{model: universityModel , where:filters_uni}})
+      const lessonCollection = await lessonModel.findAll({
+        where:  filters ,
+        include : { model: universityModel , where:filters_uni }
+        }
+        )
       res.status(200).send(lessonCollection);
     } catch (e) {
       res.status(400).send(e);
@@ -78,6 +85,7 @@ module.exports = {
         data.push({
           id: item.id,
           subject: item.subject,
+          code: item.code,
           state: item.isEnable === false ? "Disable" : "Enable",
           stateValue: item.isEnable,
           University:  item.University !== null ? item.University.name : "",
@@ -93,7 +101,6 @@ module.exports = {
     }
 
   },
-
   async createLesson(req, res) {
     try {
       const errors = validationResult(req);
@@ -121,7 +128,11 @@ module.exports = {
       res.status(400).send(e);
     }
   },
-
+  removeChar(st) {
+    st = st.replace('\r' , '')
+    st = st.replace('\n' , '')
+    return st
+  },
   async createLessonBulk(req, res) {
     try {
       const errors = validationResult(req);
@@ -130,46 +141,92 @@ module.exports = {
       }
       if (req.body.subject === "")
         return res.status(422).send("subject_is_empty");
-      let lessonList = req.body.cvs;
-      let retLessons = []
+      let lessonList = [];
       let complete = false
 
-      const transaction = await db.sequelize.transaction();
-      try{
-        for (let i = 0; i < lessonList.length; i++) {
-          let item = lessonList[i]
-          let name = item.name
-          let code = item.code
-          if (name !== null && name !== undefined) {
-            let lesson = await lessonModel.create(
-              {
-                subject: name,
-                code: code !== null && code !== undefined ? null : code,
-                isEnable: req.body.active,
-                universityId: req.body.uniId
-              }, {transaction: transaction}
+      let csvFilePath = null
 
-            )
-            retLessons.push(lesson)
-            complete = true
+      if (req.file === null || req.file === undefined)
+        return res.status(400).send({ret : null});
+
+
+        var tempPath = req.file.path
+
+        if (tempPath.length > 0) {
+
+          dir = 'api/sec-storage/admin'
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
           }
+          csvFilePath = dir + "/" + "lessons_" + req.file.filename
+          fs.rename(tempPath, csvFilePath, function (err) {
+            if (err) throw err
+          })
 
         }
-        transaction.commit()
-      }catch (e) {
-        complete = false
-        return res.status(200).send({error: true , ret : e});
-      }
 
+
+
+
+      try {
+        const data = fs.readFileSync(csvFilePath, 'utf8')
+        var rows = data.split("\n");
+        for (let i = 0; i < rows.length; i++) {
+          let item = rows[i]
+          if(item !== null && item !== undefined ) {
+            let names = item.split('\t');
+            if (names.length >= 2)
+            {
+              lessonList.push({code: module.exports.removeChar(names[0]), subject: module.exports.removeChar(names[1]),  isenable: true})
+            }
+            else if (names.length === 1)
+            {
+              lessonList.push({code: module.exports.removeChar(names[0]), subject: null,  isenable: true})
+            }
+          }
+        }
+
+        const transaction = await db.sequelize.transaction();
+        try{
+          for (let i = 0; i < lessonList.length; i++) {
+            let item = lessonList[i]
+            let subject = item.subject
+            let code = item.code
+
+            if((subject === null || subject === undefined) && (code!=null))
+              subject = code
+            if(subject === "")
+              continue
+            if (subject !== null && subject !== undefined) {
+              await lessonModel.create(
+                {
+                  subject: subject,
+                  code: code,
+                  isEnable: req.body.active,
+                  universityId: req.body.uniId
+                }, {transaction: transaction}
+              )
+            }
+
+          }
+          complete = true
+          transaction.commit()
+        }catch (e) {
+          complete = false
+          return res.status(200).send({error: true , ret : e});
+        }
+      } catch (err) {
+        console.error(err)
+      }
 
       if (complete === false)
         return res.status(422).send("lesson_create_error");
 
-      res.status(200).send({ret : retLessons});
+      return res.status(200).send({ret : true});
 
     } catch (e) {
       console.log(e);
-      res.status(400).send(e);
+      return res.status(400).send(e);
     }
   },
 
@@ -199,14 +256,40 @@ module.exports = {
     }
   },
 
+  async deleteLesson(req, res) {
+    try {
+      let lessonId = req.body.lessonId;
+
+      if(lessonId === undefined || lessonId === 0)
+        return res.status(400).send({ret: null});
+
+      const lesson = await lessonModel.findOne({where: { id: lessonId}})
+      if(lesson=== null) {
+        return res.status(400).send({ret: null});
+      }
+      lesson.destroy()
+      return res.status(200).send({ret: null});
+    } catch (e) {
+      console.log(e);
+      return res.status(401).send(0);
+    }
+
+
+
+  },
+
   async universityList(req, res) {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(422).send({errors: errors.mapped()});
       }
+      let where = {}
+      let all = req.body.all;
+      if(all === undefined)
+        where.isenable = true;
 
-      var unCollection = await universityModel.findAll()
+      var unCollection = await universityModel.findAll({where:where})
       data = []
       unCollection.forEach(item => {
         data.push({
@@ -225,56 +308,5 @@ module.exports = {
     }
   },
 
-  async createUniversity(req, res) {
-    try {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(422).send({errors: errors.mapped()});
-      }
-
-      let university = await universityModel.create(
-        {
-          name: req.body.name,
-          emailPattern: req.body.emailPattern,
-          email: req.body.email,
-          isenable: true
-        }
-      )
-      if (university === null)
-        return res.status(422).send("university_create_error");
-
-      res.status(200).send(university);
-
-    } catch (e) {
-      console.log(e);
-      res.status(400).send(e);
-    }
-  },
-
-  async editUniversity(req, res) {
-    try {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(422).send({errors: errors.mapped()});
-      }
-      let uni = await universityModel.findOne({where: {id: req.body.id}})
-      if (uni === null)
-        return res.status(422).send("university_create_error");
-
-      uni.name = req.body.name
-      uni.emailPattern = req.body.emailPattern
-      uni.email = req.body.email
-      uni.isenable = req.body.isenable
-      uni.save();
-      res.status(200).send(true);
-
-    } catch (e) {
-      console.log(e);
-      res.status(400).send(e);
-    }
-  },
-  async changeStatus(req, res) {
-
-  }
 
 }

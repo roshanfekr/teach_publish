@@ -2,8 +2,8 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    const db = require("../models")
-    await db.sequelize.query("CREATE PROCEDURE `rate_default`()\n" +
+
+    await queryInterface.sequelize.query("CREATE PROCEDURE `rate_default`()\n" +
       "LANGUAGE SQL\n" +
       "NOT DETERMINISTIC\n" +
       "CONTAINS SQL\n" +
@@ -44,7 +44,7 @@ module.exports = {
       "\tCLOSE Get_cur;  \n" +
       "END" )
 
-    await db.sequelize.query("CREATE  TRIGGER `userlessons_after_insert` AFTER INSERT ON `UserLessons` FOR EACH ROW BEGIN\n" +
+    await queryInterface.sequelize.query("CREATE  TRIGGER `userlessons_after_insert` AFTER INSERT ON `UserLessons` FOR EACH ROW BEGIN\n" +
       "\n" +
       "\t\tDECLARE id1 INT;  \n" +
       "\tDECLARE avg_rate1 FLOAT DEFAULT NULL;  \n" +
@@ -78,7 +78,7 @@ module.exports = {
       "\t\n" +
       "END")
 
-      await db.sequelize.query("CALL `rate_default`()")
+      await queryInterface.sequelize.query("CALL `rate_default`()")
   },
 
   down: async (queryInterface, Sequelize) => {

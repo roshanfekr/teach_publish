@@ -19,12 +19,16 @@ const jwt = require('../_helpers/jwt')
 const bcrypt = require('bcryptjs');
 const util = require("../_helpers/util");
 const fileModel = require('../models').File;
+const transcriptModel_ = require('../models').Transcripts;
 const fs = require('fs')
 const path = require('path')
 const {blacklist} = require("validator");
 const {INTEGER} = require("sequelize");
 const userBlackListModel = require('../models').UserBlackList;
 const lessonModel = require('../models').Lesson;
+const universityModel = require('../models').University;
+const onlineUserModel = require('../models').OnlineUser;
+import {v4 as uuidv4} from 'uuid';
 
 module.exports = {
 
@@ -49,6 +53,22 @@ module.exports = {
             }
           }
         })
+
+      const emailPattern = email.substring(email.lastIndexOf("@") + 1);
+      const universityCollection = await universityModel.findOne(
+        {where: {emailPattern: emailPattern, isenable: 1}}
+      )
+
+      if (universityCollection === null)
+        return res.status(422).send({
+          errors: {
+            email: {
+              "msg": "emailPatternNotValid",
+              value: req.body.email
+            }
+          }
+        })
+
       const roleCollection = await roleController.findByName(req.body.role)
       if (roleCollection === null || req.body.role === "admin") {
         return res.status(422).send({
@@ -71,7 +91,8 @@ module.exports = {
           isActive: false,
           emailConfirmed: false,
           emailConfirmCode: randomString,
-          password: bcrypt.hashSync(req.body.password, 8)
+          password: bcrypt.hashSync(req.body.password, 8),
+          universityId: universityCollection.id
         });
 
       await userRole.create({
@@ -79,8 +100,8 @@ module.exports = {
         roleId: roleCollection.id
       })
 
-     // var html = '<b>Hey there! </b><br> This is active url, please click it for active your email.<br/><a href="http://tuteloop.ca/activation?email=' + email + '&code=' + randomString + '">Click here</a> '
-      var html ='<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
+      // var html = '<b>Hey there! </b><br> This is active url, please click it for active your email.<br/><a href="http://tuteloop.ca/activation?email=' + email + '&code=' + randomString + '">Click here</a> '
+      var html = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
         '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">\n' +
         '<head>\n' +
         '<!--[if gte mso 9]>\n' +
@@ -324,7 +345,8 @@ module.exports = {
   async refreshLogin(req, res) {
     try {
       const userCollection = await user.findOne(
-        {where: {id: req.authUser.id},  include: [
+        {
+          where: {id: req.authUser.id}, include: [
             {
               model: userRole,
               include: [
@@ -333,7 +355,8 @@ module.exports = {
                 }
               ]
             }
-          ]}
+          ]
+        }
       )
       if (userCollection === null)
         return res.status(422).send({
@@ -344,7 +367,7 @@ module.exports = {
             }
           }
         })
-      else{
+      else {
         var roles = [];
         userCollection.UserRoles.forEach(item => {
           roles.push(item.Role.name)
@@ -438,19 +461,19 @@ module.exports = {
       user.disable = disable
       user.save()
 
-      return res.status(200).send({disable: user.disable , del: user.deleted});
+      return res.status(200).send({disable: user.disable, del: user.deleted});
     } catch (e) {
       console.log(e);
       return res.status(400).send({result: false});
     }
   },
 
-  async getCourseCount(req,res){
+  async getCourseCount(req, res) {
 
     try {
       let userId = req.authUser.id
 
-      const count = await userLesson.count({where: { userId: userId }})
+      const count = await userLesson.count({where: {userId: userId}})
 
       return res.status(200).send({c: count});
 
@@ -461,12 +484,12 @@ module.exports = {
 
   },
 
-  async getDisableStatus(req, res){
+  async getDisableStatus(req, res) {
     try {
       let userModel = require('../models').User
       const userId = req.authUser.id;
       const user = await userModel.findOne({where: {id: userId}})
-      return res.status(200).send({disable: user.disable , del: user.deleted});
+      return res.status(200).send({disable: user.disable, del: user.deleted});
     } catch (e) {
       console.log(e);
       return res.status(400).send({result: false});
@@ -632,11 +655,11 @@ module.exports = {
             if (err) throw err
           })
 
-          const findedUser = await user.findOne({where: {id: userId},})
+          const findedUser = await transcriptModel_.findOne({where: {userId: userId},})
 
           //remove old file record
-          if (findedUser.transcript_fileId > 0) {
-            let fileObj = await fileModel.findOne({where: {id: findedUser.transcript_fileId}})
+          if (findedUser != null) {
+            let fileObj = await fileModel.findOne({where: {id: findedUser.fileId}})
             if (fileObj !== null)
               fileObj.destroy()
           }
@@ -649,9 +672,17 @@ module.exports = {
               userId: userId
             })
 
-          findedUser.update({
-            transcript_fileId: avatarFile.id,
-          });
+          if (findedUser != null)
+            findedUser.upsert({
+              fileId: avatarFile.id,
+              acceptStatus: 0
+            });
+          else
+            transcriptModel_.create({
+              fileId: avatarFile.id,
+              acceptStatus: 0,
+              userId: userId
+            })
         }
       }
 
@@ -663,24 +694,21 @@ module.exports = {
 
   async getUserTranscript(req, res) {
     try {
-
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(422).send({errors: errors.mapped()});
-      }
       const userId = req.authUser.id;
 
-      const findedUser = await user.findOne({where: {id: userId},})
+      const findedUser = await transcriptModel_.findOne({
+        where: {userId: userId},
+        include: {model: fileModel}
+      })
 
       let transcriptFile = {}
       //remove old file record
-      if (findedUser.transcript_fileId > 0) {
-        let fileObj = await fileModel.findOne({where: {id: findedUser.transcript_fileId}})
-        var stats = fs.statSync("./api/" + fileObj.path)
+      if (findedUser !== null && findedUser.File != null) {
+        var stats = fs.statSync("./api/" + findedUser.File.path)
         var fileSizeInBytes = stats.size;
 // Convert the file size to megabytes (optional)
         var fileSizeInMegabytes = fileSizeInBytes / (1024);
-        transcriptFile = {fileId: fileObj.id, size: fileSizeInMegabytes}
+        transcriptFile = {fileId: findedUser.fileId, size: fileSizeInMegabytes}
       }
 
 
@@ -689,6 +717,7 @@ module.exports = {
       res.status(450).send({error: e});
     }
   },
+
 
   async saveStudentDetail(req, res) {
     try {
@@ -724,13 +753,13 @@ module.exports = {
         headline: formData.headline,
         bioMore: formData.bioMore,
         program: formData.program,
-        training_method: formData.trainingMethod ,
+        training_method: formData.trainingMethod,
 
       });
 
       let uRow = findedUser
       let info = {
-          name: formData.name
+        name: formData.name
         , File: uRow.File
         , lastName: formData.lastName
         , email: uRow.email
@@ -744,11 +773,11 @@ module.exports = {
         , program: uRow.program
         , transcript_fileId: uRow.transcript_fileId
         , trainingMethod: uRow.training_method
-        , token : ""
-        , disable : uRow.disable
+        , token: ""
+        , disable: uRow.disable
       }
       let ret = await module.exports.loginFunc(findedUser.id)
-      if(ret.login)
+      if (ret.login)
         info.token = ret.token
 
       res.status(201).send(info);
@@ -770,7 +799,8 @@ module.exports = {
       let result = {
         emailComfirmed: uRow.emailConfirmed
         , subject: !(lesson !== null)
-        , tutorTiming: (schedules !== null)}
+        , tutorTiming: (schedules !== null)
+      }
 
       res.status(200).send(result);
 
@@ -828,7 +858,7 @@ module.exports = {
     if (userCollection === null)
       return res.status(422).send({msg: "Error in reset password", variant: 'danger'})
 
-    res.status(201).send({msg: "Your email has been confirmed." , variant: 'success'})
+    res.status(201).send({msg: "Your email has been confirmed.", variant: 'success'})
   },
 
   async resetPassword(req, res) {
@@ -895,10 +925,10 @@ module.exports = {
         // createTime: Number(Date.now() / 1000)
       })
 
-      return {login: true , token: token}
+      return {login: true, token: token}
 
     } catch (e) {
-      return {login: false , token: null}
+      return {login: false, token: null}
     }
   },
 
@@ -929,7 +959,7 @@ module.exports = {
       emailConfirmed: true
     })
     let ret = await module.exports.loginFunc(userCollection.id)
-    res.status(201).send({msg: "Your email has been confirmed. ", variant: 'success' , token: ret.token})
+    res.status(201).send({msg: "Your email has been confirmed. ", variant: 'success', token: ret.token})
   },
   async reSendVerificationEmail(req, res) {
     try {
@@ -951,7 +981,7 @@ module.exports = {
       })
 
       // const html = '<b>Hey there! </b><br> This is active url, please click it for active your email.<br/><a href="http://tuteloop.ca/activation?email=' + userCollection.email + '&code=' + randomString + '">Click here</a> '
-      var html ='<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
+      var html = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
         '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">\n' +
         '<head>\n' +
         '<!--[if gte mso 9]>\n' +
@@ -1210,7 +1240,7 @@ module.exports = {
       resetPasswordCode: randomString
     })
     // var html = '<b>Hey there! </b><br>please click it for reset your password.<br/><a href="http://tuteloop.ca/reset-password?email=' + req.body.email + '&code=' + randomString + '">Click here</a> '
-    var html ='<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
+    var html = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' +
       '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">\n' +
       '<head>\n' +
       '<!--[if gte mso 9]>\n' +
@@ -1409,8 +1439,8 @@ module.exports = {
       '        \n' +
       '<div align="center">\n' +
       '  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://tuteloop.ca/tutors/1?tutor=&subject=-1&method=3&price=0&price=100&rate=0&rate=5" style="height:37px; v-text-anchor:middle; width:150px;" arcsize="11%" stroke="f" fillcolor="#02378e"><w:anchorlock/><center style="color:#FFFFFF;font-family:arial,helvetica,sans-serif;"><![endif]-->\n' +
-      '    <a href="http://tuteloop.ca/reset-password?email=' + encodeURIComponent(req.body.email) + '&code=' + randomString +'" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #02378e; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">\n' +
-      '      <span style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Confirm my Email</span></span>\n' +
+      '    <a href="http://tuteloop.ca/reset-password?email=' + encodeURIComponent(req.body.email) + '&code=' + randomString + '" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #02378e; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">\n' +
+      '      <span style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Change my Password</span></span>\n' +
       '    </a>\n' +
       '  <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->\n' +
       '</div>\n' +
@@ -1451,18 +1481,29 @@ module.exports = {
   async getTutor(req, res) {
     try {
       let userId = 0
-      let tutorId =  req.body.tutorId
-      let authUser = jwt.getCurrentUser(req)
-      if (authUser != null)
-        userId = authUser.id;
+      let tutorId = req.body.tutorId
+
+      if (req.authUser != null)
+        userId = req.authUser.id;
 
       const userCollection = await user.findOne(
         {
           where: {id: req.body.tutorId},
           attributes: ['id', 'name', 'lastName', 'headline', 'bioMore', 'training_method',
             [sequelize.literal(
-              "(SELECT avg(`avg_rate`) as avgRate FROM `RateOveralls` WHERE tutorId = User.id and avg_rate > 0)"), 'AvgRate'],],
+              "(SELECT avg(`avg_rate`) as avgRate FROM `RateOveralls` WHERE tutorId = User.id and avg_rate > 0)"), 'AvgRate'],
+            [sequelize.literal("(SELECT COUNT(*) FROM (SELECT DISTINCT m.tutorUserId ," +
+              " m.userId FROM MyLessons as m WHERE  m.acceptStatus = 1 ) as s WHERE  s.tutorUserId = User.id)"), 'Student_Count'],
+            [sequelize.literal("(SELECT COUNT(m.userId) FROM MyLessons m where  m.acceptStatus = 1 AND m.tutorUserId = User.id)"), 'Lesson_Count'],
+            [sequelize.literal("(SELECT COUNT(ul.id) FROM UserLessons AS ul WHERE ul.userId = User.id AND ul.acceptStatus= 0)"), 'not_accept'],
+            // [sequelize.literal("(select name from universities f left join lessons   on f.id = lessons.universityId join userlessons u on lessons.id = u.lessonId where u.userId = User.id LIMIT 1)") , 'University_Name']
+          ],
           include: [
+            {
+              attributes: ['name'],
+              model: universityModel,
+              required: false,
+            },
             {
               attributes: ['path', 'userId'],
               model: fileModel,
@@ -1474,6 +1515,11 @@ module.exports = {
             },
             {
               model: tutorTiming,
+              required: false,
+            },
+            {
+              attributes: ['acceptStatus'],
+              model: transcriptModel_,
               required: false,
             },
             {
@@ -1490,9 +1536,9 @@ module.exports = {
               ]
             },
             {
-              model: myLessonModel, as:"TutorMyLessons" ,
+              model: myLessonModel, as: "TutorMyLessons",
               required: false,
-              where: {userId: userId , acceptStatus : 1 },
+              where: {userId: userId, acceptStatus: 1},
               include: {model: lessonModel, attributes: ["subject", "code"]},
               distinct: true
             }
@@ -1511,7 +1557,7 @@ module.exports = {
   },
 
   async getTutors(req, res) {
-    // try {
+    try {
       const offset = (req.body.currentPage - 1) * req.body.perPage;
       const limit = req.body.perPage;
       const rangeRate = req.body.rangeRate
@@ -1520,40 +1566,48 @@ module.exports = {
 
       let whereTutor = {};
       let whereSubject = {}
+      let whereUniversity = {}
       let whereDays = []
       if (req.body.tutorName && req.body.tutorName.trim().length > 0)
         whereTutor = {
           [sequelize.Op.or]:
-            [sequelize.where(sequelize.fn('upper', sequelize.col('name')), {
-                [sequelize.Op.like]: req.body.tutorName.trim().toUpperCase() + '%'})
+            [sequelize.where(sequelize.fn('upper', sequelize.col('User.name')), {
+              [sequelize.Op.like]: req.body.tutorName.trim().toUpperCase() + '%'
+            })
               , sequelize.where(sequelize.fn('upper', sequelize.col('lastName')), {
-                [sequelize.Op.like]: req.body.tutorName.trim().toUpperCase() + '%'
-              })]
+              [sequelize.Op.like]: req.body.tutorName.trim().toUpperCase() + '%'
+            })],
+
         }
+
+      if (req.body.university && req.body.university > 0)
+        whereTutor.universityId = req.body.university
+
+      //SELECT USER.id AS a FROM Lessons AS l INNER JOIN UserLessons AS ul ON l.id = ul.lessonId AND User.id = ul.userId
       whereTutor.disable = false
-      if(trainingMethod && trainingMethod > 0 && trainingMethod < 3)
-        whereTutor.training_method = {[sequelize.Op.in]: [trainingMethod,3]}
+      if (trainingMethod && trainingMethod > 0 && trainingMethod < 3)
+        whereTutor.training_method = {[sequelize.Op.in]: [trainingMethod, 3]}
       else if (trainingMethod === 3)
-        whereTutor.training_method = {[sequelize.Op.in]: [1,2,3]}
+        whereTutor.training_method = {[sequelize.Op.in]: [1, 2, 3]}
+
 
       if (req.body.subject && req.body.subject > 0)
         whereSubject.lessonId = req.body.subject
-      if(rangePrice && rangePrice.length > 0)
-      {
+
+      if (rangePrice && rangePrice.length > 0) {
         const m1 = rangePrice[0]
         const m2 = rangePrice[1]
         whereSubject.price = {[sequelize.Op.between]: [m1, m2]}
       }
 
-      let rateWhere= {}
-      if(rangeRate !== undefined && rangeRate.length > 0)
-      {
+      let rateWhere = {}
+      if (rangeRate !== undefined && rangeRate.length > 0) {
         const r1 = rangeRate[0]
         const r2 = rangeRate[1]
-        let arr = [{avg_rate:{[sequelize.Op.between]: [r1, r2]}},]
-        if(r1 === 0)
-          arr.push({avg_rate:{[sequelize.Op.is]: null}})
-        rateWhere = { [sequelize.Op.or]: arr}
+        let arr = [{avg_rate: {[sequelize.Op.between]: [r1, r2]}},]
+        if (r1 === 0)
+          arr.push({avg_rate: {[sequelize.Op.is]: null}})
+        rateWhere = {[sequelize.Op.or]: arr}
       }
 
       if (req.body.days) {
@@ -1597,8 +1651,17 @@ module.exports = {
             "(SELECT GROUP_CONCAT(DISTINCT subject , '-' , IFNULL((SELECT `avg_rate` FROM `RateOveralls` WHERE tutorId = User.id and lessonId = Lessons.id),''),'-',acceptStatus,'-',price SEPARATOR ', ') FROM UserLessons LEFT OUTER JOIN Lessons ON" +
             " UserLessons.lessonId = Lessons.id WHERE UserLessons.userId = User.id)"), 'Subjects'],
           [sequelize.literal("(SELECT GROUP_CONCAT(TutorTimings.dayOfWeek, '-' , TutorTimings.timeStart SEPARATOR ',') " +
-            "FROM TutorTimings WHERE TutorTimings.userId = User.id)"), 'Timings']],
+            "FROM TutorTimings WHERE TutorTimings.userId = User.id)"), 'Timings'],
+          [sequelize.literal("(SELECT COUNT(*) FROM (SELECT DISTINCT m.tutorUserId ," +
+            " m.userId FROM MyLessons as m WHERE  m.acceptStatus = 1 ) as s WHERE  s.tutorUserId = User.id)"), 'Student_Count'],
+          [sequelize.literal("(SELECT COUNT(m.userId) FROM MyLessons m where  m.acceptStatus = 1 AND m.tutorUserId = User.id)"), 'Lesson_Count'],
+          [sequelize.literal("(SELECT COUNT(ul.id) FROM UserLessons AS ul WHERE ul.userId = User.id AND ul.acceptStatus= 0)"), 'not_accept'],
+
+          // [sequelize.literal("(select name from universities f left join lessons   on f.id = lessons.universityId join userlessons u on lessons.id = u.lessonId where u.userId = User.id LIMIT 1)") , 'University_Name']
+        ],
+
         include: [
+
           {
             attributes: ['path', 'userId'],
             model: fileModel,
@@ -1615,6 +1678,11 @@ module.exports = {
             where: whereDays.length > 0 ? {[sequelize.Op.or]: whereDays} : true,
           },
           {
+            attributes: ['acceptStatus'],
+            model: transcriptModel_,
+            required: false,
+          },
+          {
             attributes: [],
             model: userLesson,
             required: true,
@@ -1625,35 +1693,39 @@ module.exports = {
             model: rateOverallModel,
             where: rateWhere
           },
+          {
+            attributes: [["name", "uni_name"]],
+            model: universityModel,
+            where: {isenable: 1},
+            required: true,
+          }
         ]
       });
 
       res.status(201).send({rows: rows, totalRows: count});
-    // } catch (e) {
-    //   console.log(e);
-    //   res.status(500).send(e);
-    // }
+    } catch (e) {
+      console.log(e);
+      res.status(500).send(e);
+    }
 
   },
 
-  async changeToTutor(req , res)
-  {
-    try{
+  async changeToTutor(req, res) {
+    try {
       let userId = req.authUser.id
 
       let uRoles = await userRole.findAll({
-        where:{ userId: userId}
-        ,include:{ model: roleModel }
+        where: {userId: userId}
+        , include: {model: roleModel}
       })
-      const role = await roleModel.findOne({where: { name: "tutor"}})
+      const role = await roleModel.findOne({where: {name: "tutor"}})
       let tutorFlag = false
 
-      uRoles.forEach((role)=> {
+      uRoles.forEach((role) => {
         if (role.Role.name === "tutor")
           tutorFlag = true;
       });
-      if(!tutorFlag)
-      {
+      if (!tutorFlag) {
         for (let i = 0; i < uRoles.length; i++) {
           let ur = uRoles[i]
           if (ur.Role.name === "student") {
@@ -1665,16 +1737,134 @@ module.exports = {
           }
         }
         let ret = await module.exports.loginFunc(userId)
-        var info = {result: true , token: ret.token}
+        var info = {result: true, token: ret.token}
         res.status(201).send(info);
 
-      }
-      else
-      {
+      } else {
         res.status(400).send("exist")
       }
-    }catch (e) {
+    } catch (e) {
       res.status(400).send("error")
     }
+  },
+  async getCurrentUser(req, res) {
+    try {
+      const userCollection = await user.findOne(
+        {where: {id: req.authUser.id}}
+      )
+      res.status(201).send(userCollection);
+    } catch (e) {
+      res.status(400).send("error")
+    }
+  },
+
+  async changeSendEmailOnNewRequest(req, res) {
+    try {
+      const userCollection = await user.findOne(
+        {where: {id: req.authUser.id}}
+      )
+      await userCollection.update({
+        receiveEmailOnRequest: req.body.status
+      })
+      return res.status(200).send("ok");
+    } catch (e) {
+      console.log(e);
+      return res.status(400).send({result: false});
+    }
+  },
+  async changeSendEmailOnNewMessage(req, res) {
+    try {
+      const userCollection = await user.findOne(
+        {where: {id: req.authUser.id}}
+      )
+      await userCollection.update({
+        receiveEmailOnMessage: req.body.status
+      })
+      return res.status(200).send("ok");
+    } catch (e) {
+      console.log(e);
+      return res.status(400).send({result: false});
+    }
+  },
+
+  async insertOrUpdateOnlineUsers(email) {
+    const userCollection = await onlineUserModel.findOne(
+      {where: {email: email}}
+    )
+    if (userCollection) {
+      userCollection.changed('updatedAt', true)
+      userCollection.save()
+    } else {
+      onlineUserModel.create({
+        email: email,
+      });
+    }
+  },
+
+  async guestCreate() {
+    try {
+      const uuid = uuidv4();
+      const email = 'Guest@' + uuid;
+
+      let onlineUserCollection = await onlineUserModel
+        .create({
+          email: email,
+        });
+
+      var roles = [];
+      roles.push("guest")
+      return {
+        result: {
+          id: onlineUserCollection.id,
+          email: onlineUserCollection.email,
+          scope: roles,
+          // createTime: Number(Date.now() / 1000)
+        },
+        Err: false,
+        Exception: null
+      }
+
+      //res.status(477).send({type:"GuestCreate", token: token})
+    } catch (e) {
+      console.log(e);
+      return {
+        result: null,
+        Err: true,
+        Exception: e
+      }
+      //res.status(400).send(e);
+    }
+
+  },
+
+  async setOnlineUser(req, res) {
+    try {
+
+      let authToken = req.headers['authorization']
+      let onlineToken = req.body.online_token
+      if (onlineToken === null && (authToken === undefined || authToken === null)) {
+        var result = await module.exports.guestCreate()
+        if (result.Err === false) {
+          var guestUserToken = jwt.genToken(result.result)
+          return res.status(200).send({type: "GuestCreate", token: guestUserToken})
+        } else {
+          return res.status(404).send(result.Exception);
+        }
+      }
+      let decodeToken = null
+      if (!(authToken === undefined || authToken === null)) {
+        decodeToken = jwt.decodeToken(authToken)
+      } else {
+        decodeToken = jwt.decodeToken(onlineToken)
+      }
+      module.exports.insertOrUpdateOnlineUsers(decodeToken.email);
+
+      return res.status(200).send({type: "ok"});
+    } catch (e) {
+      console.log(e);
+      return res.status(400).send({result: false});
+    }
   }
+
+
 }

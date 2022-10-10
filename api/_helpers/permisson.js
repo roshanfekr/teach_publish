@@ -19,7 +19,7 @@ module.exports = {
       let userId = authUser.id;
       let userCollection = await user.findAll({
         where: {id: userId},
-        include: {all: true, include: {all: true}}
+        include: {model: userRole , include:{ model: role} }
       })
       let roles = []
       userCollection.forEach(item => {
@@ -45,7 +45,7 @@ module.exports = {
       let permission = req.body.permission;
       let userCollection = await user.findAll({
         where: {id: userId},
-        include: {all: true, include: {all: true}}
+        include: { model: userRole ,  include: {model: role}}
       })
       let roles = []
       userCollection.forEach(item => {

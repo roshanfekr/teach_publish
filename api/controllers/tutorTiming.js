@@ -4,6 +4,7 @@ const user = require('../models').User;
 const tutorTiming = require('../models').TutorTiming;
 
 const roleController = require('../controllers/role');
+const {UserLesson: userLesson} = require("../models");
 
 module.exports = {
   async getTiming(req, res) {
@@ -59,8 +60,16 @@ module.exports = {
       res.status(400).send(e);
     }
 
+  },
+  async getTimingCount(req, res) {
+    try {
+      let userId = req.authUser.id
+      const count = await tutorTiming.count({where: { userId: userId }})
+      return res.status(200).send({c: count});
+    } catch (e) {
+      console.log(e);
+      res.status(400).send(e);
+    }
   }
-  ,
-
 
 }

@@ -1,7 +1,7 @@
 exports.ids = [4];
 exports.modules = {
 
-/***/ 234:
+/***/ 238:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -346,6 +346,7 @@ __webpack_require__.r(__webpack_exports__);
   "account.delete": "Remove Account",
   "account.disable.alert": "Would you like to deactivate your account?",
   "account.active.alert": "Would you like to activate your account?",
+  "account.checkTimingCount": "Your tutoring ad is not listed on the search since you haven’t chose any timing for tutoring.",
   "department": "Department",
   "years": "Years",
   "university": "University",
@@ -367,7 +368,11 @@ __webpack_require__.r(__webpack_exports__);
   "admin.university.subdomain.required": "Required",
   "admin.lessons.csv.upload.label": "CSV File",
   "noRecordFound": "No Record Found",
-  "emailPatternNotValid": "Your email does not belong to our universities"
+  "emailPatternNotValid": "Your email does not belong to our universities",
+  "Become_tutor_txt": "You can start now",
+  "Become_tutor_btn": "Become a tutor",
+  "email_on_new_message": "Send me email when received new message.",
+  "email_on_new_request": "Send me email when received new request."
 });
 
 /***/ })

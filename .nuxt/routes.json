@@ -2,1243 +2,1291 @@
   {
     "name": "about___en",
     "path": "/about",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\about.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
     "url": "/about",
-    "_name": "_5e34d4bf"
+    "_name": "_6aa959ce"
   },
   {
     "name": "activation___en",
     "path": "/activation",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\activation.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\activation.vue",
     "chunkName": "pages/activation",
     "url": "/activation",
-    "_name": "_76856858"
+    "_name": "_4e39b5ba"
   },
   {
     "name": "admin___en",
     "path": "/admin",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\index.vue",
     "chunkName": "pages/admin/index",
     "url": "/admin",
-    "_name": "_e116e43e"
+    "_name": "_a903d372"
   },
   {
     "name": "client___en",
     "path": "/client",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\client.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\client.vue",
     "chunkName": "pages/client",
     "url": "/client",
-    "_name": "_5776df09"
+    "_name": "_79d02bef"
   },
   {
     "name": "contact-us___en",
     "path": "/contact-us",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\contact-us.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\contact-us.vue",
     "chunkName": "pages/contact-us",
     "url": "/contact-us",
-    "_name": "_9d5190ae"
+    "_name": "_3ad3a18f"
   },
   {
     "name": "index___fa",
     "path": "/fa",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "url": "/fa",
-    "_name": "_7decaf84"
+    "_name": "_2b39a444"
   },
   {
     "name": "FAQ___en",
     "path": "/FAQ",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\FAQ.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\FAQ.vue",
     "chunkName": "pages/FAQ",
     "url": "/FAQ",
-    "_name": "_f5413bb0"
+    "_name": "_6394a1fc"
   },
   {
     "name": "forget-password___en",
     "path": "/forget-password",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\forget-password.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\forget-password.vue",
     "chunkName": "pages/forget-password",
     "url": "/forget-password",
-    "_name": "_c34aafa6"
+    "_name": "_57b27e07"
   },
   {
     "name": "index___fr",
     "path": "/fr",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "url": "/fr",
-    "_name": "_7decaf84"
+    "_name": "_2b39a444"
   },
   {
     "name": "login___en",
     "path": "/login",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\login.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\login.vue",
     "chunkName": "pages/login",
     "url": "/login",
-    "_name": "_4794529b"
+    "_name": "_97ea5e16"
   },
   {
     "name": "reg-cert___en",
     "path": "/reg-cert",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-cert.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-cert.vue",
     "chunkName": "pages/reg-cert",
     "url": "/reg-cert",
-    "_name": "_427ae07b"
+    "_name": "_33b48be1"
   },
   {
     "name": "reg-educ___en",
     "path": "/reg-educ",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-educ.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-educ.vue",
     "chunkName": "pages/reg-educ",
     "url": "/reg-educ",
-    "_name": "_3cf40d78"
+    "_name": "_5a80b6ac"
   },
   {
     "name": "reg-expe___en",
     "path": "/reg-expe",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-expe.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-expe.vue",
     "chunkName": "pages/reg-expe",
     "url": "/reg-expe",
-    "_name": "_09d2e382"
+    "_name": "_275f8cb6"
   },
   {
     "name": "register___en",
     "path": "/register",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\register.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\register.vue",
     "chunkName": "pages/register",
     "url": "/register",
-    "_name": "_f86c073e"
+    "_name": "_7503a7c7"
   },
   {
     "name": "reset-password___en",
     "path": "/reset-password",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reset-password.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reset-password.vue",
     "chunkName": "pages/reset-password",
     "url": "/reset-password",
-    "_name": "_da4ad0d2"
+    "_name": "_5ab8c306"
   },
   {
     "name": "student-details___en",
     "path": "/student-details",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\student-details.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\student-details.vue",
     "chunkName": "pages/student-details",
     "url": "/student-details",
-    "_name": "_62e3883c"
+    "_name": "_f033dc88"
   },
   {
     "name": "tutor-details___en",
     "path": "/tutor-details",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-details.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-details.vue",
     "chunkName": "pages/tutor-details",
     "url": "/tutor-details",
-    "_name": "_41cb0edd"
+    "_name": "_b21ad992"
   },
   {
     "name": "tutor-finish___en",
     "path": "/tutor-finish",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-finish.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-finish.vue",
     "chunkName": "pages/tutor-finish",
     "url": "/tutor-finish",
-    "_name": "_7c267648"
+    "_name": "_cfa002a4"
   },
   {
     "name": "tutor-subject___en",
     "path": "/tutor-subject",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-subject.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-subject.vue",
     "chunkName": "pages/tutor-subject",
     "url": "/tutor-subject",
-    "_name": "_d2062672"
+    "_name": "_07b71dbe"
   },
   {
     "name": "tutor-timing___en",
     "path": "/tutor-timing",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-timing.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-timing.vue",
     "chunkName": "pages/tutor-timing",
     "url": "/tutor-timing",
-    "_name": "_67b3267f"
+    "_name": "_f886a236"
   },
   {
     "name": "tutor-transcript___en",
     "path": "/tutor-transcript",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-transcript.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-transcript.vue",
     "chunkName": "pages/tutor-transcript",
     "url": "/tutor-transcript",
-    "_name": "_8f69fd2a"
+    "_name": "_29ede6d1"
   },
   {
     "name": "upload___en",
     "path": "/upload",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\upload.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\upload.vue",
     "chunkName": "pages/upload",
     "url": "/upload",
-    "_name": "_0743ee3f"
+    "_name": "_299d3b25"
   },
   {
     "path": "/user-panel",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel.vue",
     "chunkName": "pages/user-panel",
     "children": [
       {
         "name": "user-panel___en",
         "path": "",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\index.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\index.vue",
         "chunkName": "pages/user-panel/index",
         "url": "/user-panel",
-        "_name": "_77205b7c"
+        "_name": "_f1acccc8"
       },
       {
         "name": "user-panel-account___en",
         "path": "account",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\account.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\account.vue",
         "chunkName": "pages/user-panel/account",
         "url": "/user-panel/account",
-        "_name": "_eb750fc6"
+        "_name": "_f4aa5e12"
       },
       {
         "name": "user-panel-certs___en",
         "path": "certs",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\certs.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\certs.vue",
         "chunkName": "pages/user-panel/certs",
         "url": "/user-panel/certs",
-        "_name": "_bc57c482"
+        "_name": "_648de519"
       },
       {
         "name": "user-panel-courses___en",
         "path": "courses",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\courses.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\courses.vue",
         "chunkName": "pages/user-panel/courses",
         "url": "/user-panel/courses",
-        "_name": "_52bd5428"
+        "_name": "_4e22ad02"
       },
       {
         "name": "user-panel-educs___en",
         "path": "educs",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\educs.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\educs.vue",
         "chunkName": "pages/user-panel/educs",
         "url": "/user-panel/educs",
-        "_name": "_37a7c3d4"
+        "_name": "_b2343520"
       },
       {
         "name": "user-panel-expes___en",
         "path": "expes",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\expes.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\expes.vue",
         "chunkName": "pages/user-panel/expes",
         "url": "/user-panel/expes",
-        "_name": "_06a3af0a"
+        "_name": "_81302056"
       },
       {
         "name": "user-panel-lessons___en",
         "path": "lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\lessons.vue",
         "chunkName": "pages/user-panel/lessons",
         "url": "/user-panel/lessons",
-        "_name": "_7f04312b"
+        "_name": "_7a698a05"
       },
       {
         "name": "user-panel-my-lessons___en",
         "path": "my-lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\my-lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\my-lessons.vue",
         "chunkName": "pages/user-panel/my-lessons",
         "url": "/user-panel/my-lessons",
-        "_name": "_1b2e8bda"
+        "_name": "_520d4cc0"
       },
       {
         "name": "user-panel-profile___en",
         "path": "profile",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\profile.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\profile.vue",
         "chunkName": "pages/user-panel/profile",
         "url": "/user-panel/profile",
-        "_name": "_613c5999"
+        "_name": "_5ca1b273"
       },
       {
         "name": "user-panel-request___en",
         "path": "request",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\request.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\request.vue",
         "chunkName": "pages/user-panel/request",
         "url": "/user-panel/request",
-        "_name": "_c99c4102"
+        "_name": "_d2d18f4e"
       },
       {
         "name": "user-panel-requests___en",
         "path": "requests",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\requests.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\requests.vue",
         "chunkName": "pages/user-panel/requests",
         "url": "/user-panel/requests",
-        "_name": "_62949cf8"
+        "_name": "_3ffb73ea"
       },
       {
         "name": "user-panel-st-profile___en",
         "path": "st-profile",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\st-profile.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\st-profile.vue",
         "chunkName": "pages/user-panel/st-profile",
         "url": "/user-panel/st-profile",
-        "_name": "_bfeb6506"
+        "_name": "_522de33a"
       },
       {
         "name": "user-panel-subject___en",
         "path": "subject",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\subject.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\subject.vue",
         "chunkName": "pages/user-panel/subject",
         "url": "/user-panel/subject",
-        "_name": "_32b0ab9c"
+        "_name": "_2e160476"
       },
       {
         "name": "user-panel-system-msg___en",
         "path": "system-msg",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\system-msg.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\system-msg.vue",
         "chunkName": "pages/user-panel/system-msg",
         "url": "/user-panel/system-msg",
-        "_name": "_360041ba"
+        "_name": "_1bdea009"
       },
       {
         "name": "user-panel-taken-lessons___en",
         "path": "taken-lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\taken-lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\taken-lessons.vue",
         "chunkName": "pages/user-panel/taken-lessons",
         "url": "/user-panel/taken-lessons",
-        "_name": "_78ec29b6"
+        "_name": "_0f9bb87f"
       },
       {
         "name": "user-panel-timing___en",
         "path": "timing",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\timing.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\timing.vue",
         "chunkName": "pages/user-panel/timing",
         "url": "/user-panel/timing",
-        "_name": "_605c8dec"
+        "_name": "_6450dcf0"
       },
       {
         "name": "user-panel-tutor-transcript___en",
         "path": "tutor-transcript",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\tutor-transcript.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\tutor-transcript.vue",
         "chunkName": "pages/user-panel/tutor-transcript",
         "url": "/user-panel/tutor-transcript",
-        "_name": "_c0914826"
+        "_name": "_29414f5a"
       }
     ],
-    "_name": "_63907a40"
+    "_name": "_25e637b4"
   },
   {
     "name": "admin-faq-manager___en",
     "path": "/admin/faq-manager",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\faq-manager.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\faq-manager.vue",
     "chunkName": "pages/admin/faq-manager",
     "url": "/admin/faq-manager",
-    "_name": "_0206f476"
+    "_name": "_d908acaa"
   },
   {
     "name": "admin-gender___en",
     "path": "/admin/gender",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\gender.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\gender.vue",
     "chunkName": "pages/admin/gender",
     "url": "/admin/gender",
-    "_name": "_058d3f7c"
+    "_name": "_6260e49c"
   },
   {
     "name": "admin-language-manager___en",
     "path": "/admin/language-manager",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\language-manager.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\language-manager.vue",
     "chunkName": "pages/admin/language-manager",
     "url": "/admin/language-manager",
-    "_name": "_be77ce0e"
+    "_name": "_45bd74d3"
   },
   {
     "name": "admin-lessons___en",
     "path": "/admin/lessons",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\lessons.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\lessons.vue",
     "chunkName": "pages/admin/lessons",
     "url": "/admin/lessons",
-    "_name": "_c86efdec"
+    "_name": "_48dcf020"
   },
   {
     "name": "admin-notification___en",
     "path": "/admin/notification",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\notification.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\notification.vue",
     "chunkName": "pages/admin/notification",
     "url": "/admin/notification",
-    "_name": "_6de2deac"
+    "_name": "_69483786"
+  },
+  {
+    "name": "admin-online-user___en",
+    "path": "/admin/online-user",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\online-user.vue",
+    "chunkName": "pages/admin/online-user",
+    "url": "/admin/online-user",
+    "_name": "_9ad4558c"
+  },
+  {
+    "name": "admin-report-dashboard___en",
+    "path": "/admin/report-dashboard",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\report-dashboard.vue",
+    "chunkName": "pages/admin/report-dashboard",
+    "url": "/admin/report-dashboard",
+    "_name": "_3308be56"
   },
   {
     "name": "admin-reviews___en",
     "path": "/admin/reviews",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\reviews.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\reviews.vue",
     "chunkName": "pages/admin/reviews",
     "url": "/admin/reviews",
-    "_name": "_74f8ea2c"
+    "_name": "_054c91d0"
   },
   {
     "name": "admin-university___en",
     "path": "/admin/university",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\university.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\university.vue",
     "chunkName": "pages/admin/university",
     "url": "/admin/university",
-    "_name": "_62ffcd0f"
+    "_name": "_25b99469"
   },
   {
     "name": "admin-user-change___en",
     "path": "/admin/user-change",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\user-change.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\user-change.vue",
     "chunkName": "pages/admin/user-change",
     "url": "/admin/user-change",
-    "_name": "_9812307e"
+    "_name": "_48760ba7"
   },
   {
     "name": "admin-users___en",
     "path": "/admin/users",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\users.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\users.vue",
     "chunkName": "pages/admin/users",
     "url": "/admin/users",
-    "_name": "_56432fd2"
+    "_name": "_1e301f06"
   },
   {
     "name": "about___fa",
     "path": "/fa/about",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\about.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
     "url": "/fa/about",
-    "_name": "_5e34d4bf"
+    "_name": "_6aa959ce"
   },
   {
     "name": "activation___fa",
     "path": "/fa/activation",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\activation.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\activation.vue",
     "chunkName": "pages/activation",
     "url": "/fa/activation",
-    "_name": "_76856858"
+    "_name": "_4e39b5ba"
   },
   {
     "name": "admin___fa",
     "path": "/fa/admin",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\index.vue",
     "chunkName": "pages/admin/index",
     "url": "/fa/admin",
-    "_name": "_e116e43e"
+    "_name": "_a903d372"
   },
   {
     "name": "client___fa",
     "path": "/fa/client",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\client.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\client.vue",
     "chunkName": "pages/client",
     "url": "/fa/client",
-    "_name": "_5776df09"
+    "_name": "_79d02bef"
   },
   {
     "name": "contact-us___fa",
     "path": "/fa/contact-us",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\contact-us.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\contact-us.vue",
     "chunkName": "pages/contact-us",
     "url": "/fa/contact-us",
-    "_name": "_9d5190ae"
+    "_name": "_3ad3a18f"
   },
   {
     "name": "FAQ___fa",
     "path": "/fa/FAQ",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\FAQ.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\FAQ.vue",
     "chunkName": "pages/FAQ",
     "url": "/fa/FAQ",
-    "_name": "_f5413bb0"
+    "_name": "_6394a1fc"
   },
   {
     "name": "forget-password___fa",
     "path": "/fa/forget-password",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\forget-password.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\forget-password.vue",
     "chunkName": "pages/forget-password",
     "url": "/fa/forget-password",
-    "_name": "_c34aafa6"
+    "_name": "_57b27e07"
   },
   {
     "name": "login___fa",
     "path": "/fa/login",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\login.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\login.vue",
     "chunkName": "pages/login",
     "url": "/fa/login",
-    "_name": "_4794529b"
+    "_name": "_97ea5e16"
   },
   {
     "name": "reg-cert___fa",
     "path": "/fa/reg-cert",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-cert.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-cert.vue",
     "chunkName": "pages/reg-cert",
     "url": "/fa/reg-cert",
-    "_name": "_427ae07b"
+    "_name": "_33b48be1"
   },
   {
     "name": "reg-educ___fa",
     "path": "/fa/reg-educ",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-educ.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-educ.vue",
     "chunkName": "pages/reg-educ",
     "url": "/fa/reg-educ",
-    "_name": "_3cf40d78"
+    "_name": "_5a80b6ac"
   },
   {
     "name": "reg-expe___fa",
     "path": "/fa/reg-expe",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-expe.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-expe.vue",
     "chunkName": "pages/reg-expe",
     "url": "/fa/reg-expe",
-    "_name": "_09d2e382"
+    "_name": "_275f8cb6"
   },
   {
     "name": "register___fa",
     "path": "/fa/register",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\register.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\register.vue",
     "chunkName": "pages/register",
     "url": "/fa/register",
-    "_name": "_f86c073e"
+    "_name": "_7503a7c7"
   },
   {
     "name": "reset-password___fa",
     "path": "/fa/reset-password",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reset-password.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reset-password.vue",
     "chunkName": "pages/reset-password",
     "url": "/fa/reset-password",
-    "_name": "_da4ad0d2"
+    "_name": "_5ab8c306"
   },
   {
     "name": "student-details___fa",
     "path": "/fa/student-details",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\student-details.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\student-details.vue",
     "chunkName": "pages/student-details",
     "url": "/fa/student-details",
-    "_name": "_62e3883c"
+    "_name": "_f033dc88"
   },
   {
     "name": "tutor-details___fa",
     "path": "/fa/tutor-details",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-details.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-details.vue",
     "chunkName": "pages/tutor-details",
     "url": "/fa/tutor-details",
-    "_name": "_41cb0edd"
+    "_name": "_b21ad992"
   },
   {
     "name": "tutor-finish___fa",
     "path": "/fa/tutor-finish",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-finish.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-finish.vue",
     "chunkName": "pages/tutor-finish",
     "url": "/fa/tutor-finish",
-    "_name": "_7c267648"
+    "_name": "_cfa002a4"
   },
   {
     "name": "tutor-subject___fa",
     "path": "/fa/tutor-subject",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-subject.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-subject.vue",
     "chunkName": "pages/tutor-subject",
     "url": "/fa/tutor-subject",
-    "_name": "_d2062672"
+    "_name": "_07b71dbe"
   },
   {
     "name": "tutor-timing___fa",
     "path": "/fa/tutor-timing",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-timing.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-timing.vue",
     "chunkName": "pages/tutor-timing",
     "url": "/fa/tutor-timing",
-    "_name": "_67b3267f"
+    "_name": "_f886a236"
   },
   {
     "name": "tutor-transcript___fa",
     "path": "/fa/tutor-transcript",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-transcript.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-transcript.vue",
     "chunkName": "pages/tutor-transcript",
     "url": "/fa/tutor-transcript",
-    "_name": "_8f69fd2a"
+    "_name": "_29ede6d1"
   },
   {
     "name": "upload___fa",
     "path": "/fa/upload",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\upload.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\upload.vue",
     "chunkName": "pages/upload",
     "url": "/fa/upload",
-    "_name": "_0743ee3f"
+    "_name": "_299d3b25"
   },
   {
     "path": "/fa/user-panel",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel.vue",
     "chunkName": "pages/user-panel",
     "children": [
       {
         "name": "user-panel___fa",
         "path": "",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\index.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\index.vue",
         "chunkName": "pages/user-panel/index",
         "url": "/fa/user-panel",
-        "_name": "_77205b7c"
+        "_name": "_f1acccc8"
       },
       {
         "name": "user-panel-account___fa",
         "path": "account",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\account.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\account.vue",
         "chunkName": "pages/user-panel/account",
         "url": "/fa/user-panel/account",
-        "_name": "_eb750fc6"
+        "_name": "_f4aa5e12"
       },
       {
         "name": "user-panel-certs___fa",
         "path": "certs",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\certs.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\certs.vue",
         "chunkName": "pages/user-panel/certs",
         "url": "/fa/user-panel/certs",
-        "_name": "_bc57c482"
+        "_name": "_648de519"
       },
       {
         "name": "user-panel-courses___fa",
         "path": "courses",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\courses.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\courses.vue",
         "chunkName": "pages/user-panel/courses",
         "url": "/fa/user-panel/courses",
-        "_name": "_52bd5428"
+        "_name": "_4e22ad02"
       },
       {
         "name": "user-panel-educs___fa",
         "path": "educs",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\educs.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\educs.vue",
         "chunkName": "pages/user-panel/educs",
         "url": "/fa/user-panel/educs",
-        "_name": "_37a7c3d4"
+        "_name": "_b2343520"
       },
       {
         "name": "user-panel-expes___fa",
         "path": "expes",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\expes.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\expes.vue",
         "chunkName": "pages/user-panel/expes",
         "url": "/fa/user-panel/expes",
-        "_name": "_06a3af0a"
+        "_name": "_81302056"
       },
       {
         "name": "user-panel-lessons___fa",
         "path": "lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\lessons.vue",
         "chunkName": "pages/user-panel/lessons",
         "url": "/fa/user-panel/lessons",
-        "_name": "_7f04312b"
+        "_name": "_7a698a05"
       },
       {
         "name": "user-panel-my-lessons___fa",
         "path": "my-lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\my-lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\my-lessons.vue",
         "chunkName": "pages/user-panel/my-lessons",
         "url": "/fa/user-panel/my-lessons",
-        "_name": "_1b2e8bda"
+        "_name": "_520d4cc0"
       },
       {
         "name": "user-panel-profile___fa",
         "path": "profile",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\profile.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\profile.vue",
         "chunkName": "pages/user-panel/profile",
         "url": "/fa/user-panel/profile",
-        "_name": "_613c5999"
+        "_name": "_5ca1b273"
       },
       {
         "name": "user-panel-request___fa",
         "path": "request",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\request.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\request.vue",
         "chunkName": "pages/user-panel/request",
         "url": "/fa/user-panel/request",
-        "_name": "_c99c4102"
+        "_name": "_d2d18f4e"
       },
       {
         "name": "user-panel-requests___fa",
         "path": "requests",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\requests.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\requests.vue",
         "chunkName": "pages/user-panel/requests",
         "url": "/fa/user-panel/requests",
-        "_name": "_62949cf8"
+        "_name": "_3ffb73ea"
       },
       {
         "name": "user-panel-st-profile___fa",
         "path": "st-profile",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\st-profile.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\st-profile.vue",
         "chunkName": "pages/user-panel/st-profile",
         "url": "/fa/user-panel/st-profile",
-        "_name": "_bfeb6506"
+        "_name": "_522de33a"
       },
       {
         "name": "user-panel-subject___fa",
         "path": "subject",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\subject.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\subject.vue",
         "chunkName": "pages/user-panel/subject",
         "url": "/fa/user-panel/subject",
-        "_name": "_32b0ab9c"
+        "_name": "_2e160476"
       },
       {
         "name": "user-panel-system-msg___fa",
         "path": "system-msg",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\system-msg.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\system-msg.vue",
         "chunkName": "pages/user-panel/system-msg",
         "url": "/fa/user-panel/system-msg",
-        "_name": "_360041ba"
+        "_name": "_1bdea009"
       },
       {
         "name": "user-panel-taken-lessons___fa",
         "path": "taken-lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\taken-lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\taken-lessons.vue",
         "chunkName": "pages/user-panel/taken-lessons",
         "url": "/fa/user-panel/taken-lessons",
-        "_name": "_78ec29b6"
+        "_name": "_0f9bb87f"
       },
       {
         "name": "user-panel-timing___fa",
         "path": "timing",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\timing.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\timing.vue",
         "chunkName": "pages/user-panel/timing",
         "url": "/fa/user-panel/timing",
-        "_name": "_605c8dec"
+        "_name": "_6450dcf0"
       },
       {
         "name": "user-panel-tutor-transcript___fa",
         "path": "tutor-transcript",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\tutor-transcript.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\tutor-transcript.vue",
         "chunkName": "pages/user-panel/tutor-transcript",
         "url": "/fa/user-panel/tutor-transcript",
-        "_name": "_c0914826"
+        "_name": "_29414f5a"
       }
     ],
-    "_name": "_63907a40"
+    "_name": "_25e637b4"
   },
   {
     "name": "about___fr",
     "path": "/fr/about",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\about.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
     "url": "/fr/about",
-    "_name": "_5e34d4bf"
+    "_name": "_6aa959ce"
   },
   {
     "name": "activation___fr",
     "path": "/fr/activation",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\activation.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\activation.vue",
     "chunkName": "pages/activation",
     "url": "/fr/activation",
-    "_name": "_76856858"
+    "_name": "_4e39b5ba"
   },
   {
     "name": "admin___fr",
     "path": "/fr/admin",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\index.vue",
     "chunkName": "pages/admin/index",
     "url": "/fr/admin",
-    "_name": "_e116e43e"
+    "_name": "_a903d372"
   },
   {
     "name": "client___fr",
     "path": "/fr/client",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\client.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\client.vue",
     "chunkName": "pages/client",
     "url": "/fr/client",
-    "_name": "_5776df09"
+    "_name": "_79d02bef"
   },
   {
     "name": "contact-us___fr",
     "path": "/fr/contact-us",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\contact-us.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\contact-us.vue",
     "chunkName": "pages/contact-us",
     "url": "/fr/contact-us",
-    "_name": "_9d5190ae"
+    "_name": "_3ad3a18f"
   },
   {
     "name": "FAQ___fr",
     "path": "/fr/FAQ",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\FAQ.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\FAQ.vue",
     "chunkName": "pages/FAQ",
     "url": "/fr/FAQ",
-    "_name": "_f5413bb0"
+    "_name": "_6394a1fc"
   },
   {
     "name": "forget-password___fr",
     "path": "/fr/forget-password",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\forget-password.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\forget-password.vue",
     "chunkName": "pages/forget-password",
     "url": "/fr/forget-password",
-    "_name": "_c34aafa6"
+    "_name": "_57b27e07"
   },
   {
     "name": "login___fr",
     "path": "/fr/login",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\login.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\login.vue",
     "chunkName": "pages/login",
     "url": "/fr/login",
-    "_name": "_4794529b"
+    "_name": "_97ea5e16"
   },
   {
     "name": "reg-cert___fr",
     "path": "/fr/reg-cert",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-cert.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-cert.vue",
     "chunkName": "pages/reg-cert",
     "url": "/fr/reg-cert",
-    "_name": "_427ae07b"
+    "_name": "_33b48be1"
   },
   {
     "name": "reg-educ___fr",
     "path": "/fr/reg-educ",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-educ.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-educ.vue",
     "chunkName": "pages/reg-educ",
     "url": "/fr/reg-educ",
-    "_name": "_3cf40d78"
+    "_name": "_5a80b6ac"
   },
   {
     "name": "reg-expe___fr",
     "path": "/fr/reg-expe",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reg-expe.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reg-expe.vue",
     "chunkName": "pages/reg-expe",
     "url": "/fr/reg-expe",
-    "_name": "_09d2e382"
+    "_name": "_275f8cb6"
   },
   {
     "name": "register___fr",
     "path": "/fr/register",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\register.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\register.vue",
     "chunkName": "pages/register",
     "url": "/fr/register",
-    "_name": "_f86c073e"
+    "_name": "_7503a7c7"
   },
   {
     "name": "reset-password___fr",
     "path": "/fr/reset-password",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\reset-password.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\reset-password.vue",
     "chunkName": "pages/reset-password",
     "url": "/fr/reset-password",
-    "_name": "_da4ad0d2"
+    "_name": "_5ab8c306"
   },
   {
     "name": "student-details___fr",
     "path": "/fr/student-details",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\student-details.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\student-details.vue",
     "chunkName": "pages/student-details",
     "url": "/fr/student-details",
-    "_name": "_62e3883c"
+    "_name": "_f033dc88"
   },
   {
     "name": "tutor-details___fr",
     "path": "/fr/tutor-details",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-details.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-details.vue",
     "chunkName": "pages/tutor-details",
     "url": "/fr/tutor-details",
-    "_name": "_41cb0edd"
+    "_name": "_b21ad992"
   },
   {
     "name": "tutor-finish___fr",
     "path": "/fr/tutor-finish",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-finish.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-finish.vue",
     "chunkName": "pages/tutor-finish",
     "url": "/fr/tutor-finish",
-    "_name": "_7c267648"
+    "_name": "_cfa002a4"
   },
   {
     "name": "tutor-subject___fr",
     "path": "/fr/tutor-subject",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-subject.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-subject.vue",
     "chunkName": "pages/tutor-subject",
     "url": "/fr/tutor-subject",
-    "_name": "_d2062672"
+    "_name": "_07b71dbe"
   },
   {
     "name": "tutor-timing___fr",
     "path": "/fr/tutor-timing",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-timing.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-timing.vue",
     "chunkName": "pages/tutor-timing",
     "url": "/fr/tutor-timing",
-    "_name": "_67b3267f"
+    "_name": "_f886a236"
   },
   {
     "name": "tutor-transcript___fr",
     "path": "/fr/tutor-transcript",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor-transcript.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor-transcript.vue",
     "chunkName": "pages/tutor-transcript",
     "url": "/fr/tutor-transcript",
-    "_name": "_8f69fd2a"
+    "_name": "_29ede6d1"
   },
   {
     "name": "upload___fr",
     "path": "/fr/upload",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\upload.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\upload.vue",
     "chunkName": "pages/upload",
     "url": "/fr/upload",
-    "_name": "_0743ee3f"
+    "_name": "_299d3b25"
   },
   {
     "path": "/fr/user-panel",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel.vue",
     "chunkName": "pages/user-panel",
     "children": [
       {
         "name": "user-panel___fr",
         "path": "",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\index.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\index.vue",
         "chunkName": "pages/user-panel/index",
         "url": "/fr/user-panel",
-        "_name": "_77205b7c"
+        "_name": "_f1acccc8"
       },
       {
         "name": "user-panel-account___fr",
         "path": "account",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\account.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\account.vue",
         "chunkName": "pages/user-panel/account",
         "url": "/fr/user-panel/account",
-        "_name": "_eb750fc6"
+        "_name": "_f4aa5e12"
       },
       {
         "name": "user-panel-certs___fr",
         "path": "certs",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\certs.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\certs.vue",
         "chunkName": "pages/user-panel/certs",
         "url": "/fr/user-panel/certs",
-        "_name": "_bc57c482"
+        "_name": "_648de519"
       },
       {
         "name": "user-panel-courses___fr",
         "path": "courses",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\courses.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\courses.vue",
         "chunkName": "pages/user-panel/courses",
         "url": "/fr/user-panel/courses",
-        "_name": "_52bd5428"
+        "_name": "_4e22ad02"
       },
       {
         "name": "user-panel-educs___fr",
         "path": "educs",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\educs.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\educs.vue",
         "chunkName": "pages/user-panel/educs",
         "url": "/fr/user-panel/educs",
-        "_name": "_37a7c3d4"
+        "_name": "_b2343520"
       },
       {
         "name": "user-panel-expes___fr",
         "path": "expes",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\expes.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\expes.vue",
         "chunkName": "pages/user-panel/expes",
         "url": "/fr/user-panel/expes",
-        "_name": "_06a3af0a"
+        "_name": "_81302056"
       },
       {
         "name": "user-panel-lessons___fr",
         "path": "lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\lessons.vue",
         "chunkName": "pages/user-panel/lessons",
         "url": "/fr/user-panel/lessons",
-        "_name": "_7f04312b"
+        "_name": "_7a698a05"
       },
       {
         "name": "user-panel-my-lessons___fr",
         "path": "my-lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\my-lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\my-lessons.vue",
         "chunkName": "pages/user-panel/my-lessons",
         "url": "/fr/user-panel/my-lessons",
-        "_name": "_1b2e8bda"
+        "_name": "_520d4cc0"
       },
       {
         "name": "user-panel-profile___fr",
         "path": "profile",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\profile.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\profile.vue",
         "chunkName": "pages/user-panel/profile",
         "url": "/fr/user-panel/profile",
-        "_name": "_613c5999"
+        "_name": "_5ca1b273"
       },
       {
         "name": "user-panel-request___fr",
         "path": "request",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\request.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\request.vue",
         "chunkName": "pages/user-panel/request",
         "url": "/fr/user-panel/request",
-        "_name": "_c99c4102"
+        "_name": "_d2d18f4e"
       },
       {
         "name": "user-panel-requests___fr",
         "path": "requests",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\requests.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\requests.vue",
         "chunkName": "pages/user-panel/requests",
         "url": "/fr/user-panel/requests",
-        "_name": "_62949cf8"
+        "_name": "_3ffb73ea"
       },
       {
         "name": "user-panel-st-profile___fr",
         "path": "st-profile",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\st-profile.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\st-profile.vue",
         "chunkName": "pages/user-panel/st-profile",
         "url": "/fr/user-panel/st-profile",
-        "_name": "_bfeb6506"
+        "_name": "_522de33a"
       },
       {
         "name": "user-panel-subject___fr",
         "path": "subject",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\subject.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\subject.vue",
         "chunkName": "pages/user-panel/subject",
         "url": "/fr/user-panel/subject",
-        "_name": "_32b0ab9c"
+        "_name": "_2e160476"
       },
       {
         "name": "user-panel-system-msg___fr",
         "path": "system-msg",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\system-msg.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\system-msg.vue",
         "chunkName": "pages/user-panel/system-msg",
         "url": "/fr/user-panel/system-msg",
-        "_name": "_360041ba"
+        "_name": "_1bdea009"
       },
       {
         "name": "user-panel-taken-lessons___fr",
         "path": "taken-lessons",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\taken-lessons.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\taken-lessons.vue",
         "chunkName": "pages/user-panel/taken-lessons",
         "url": "/fr/user-panel/taken-lessons",
-        "_name": "_78ec29b6"
+        "_name": "_0f9bb87f"
       },
       {
         "name": "user-panel-timing___fr",
         "path": "timing",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\timing.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\timing.vue",
         "chunkName": "pages/user-panel/timing",
         "url": "/fr/user-panel/timing",
-        "_name": "_605c8dec"
+        "_name": "_6450dcf0"
       },
       {
         "name": "user-panel-tutor-transcript___fr",
         "path": "tutor-transcript",
-        "component": "C:\\\\Repository\\\\teach\\\\pages\\\\user-panel\\\\tutor-transcript.vue",
+        "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\user-panel\\\\tutor-transcript.vue",
         "chunkName": "pages/user-panel/tutor-transcript",
         "url": "/fr/user-panel/tutor-transcript",
-        "_name": "_c0914826"
+        "_name": "_29414f5a"
       }
     ],
-    "_name": "_63907a40"
+    "_name": "_25e637b4"
   },
   {
     "name": "legal-privacy-policy___en",
     "path": "/legal/privacy-policy",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\legal\\\\privacy-policy.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\legal\\\\privacy-policy.vue",
     "chunkName": "pages/legal/privacy-policy",
     "url": "/legal/privacy-policy",
-    "_name": "_b12e79fc"
+    "_name": "_5edb4d5c"
   },
   {
     "name": "legal-terms-of-agreement___en",
     "path": "/legal/terms-of-agreement",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\legal\\\\terms-of-agreement.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\legal\\\\terms-of-agreement.vue",
     "chunkName": "pages/legal/terms-of-agreement",
     "url": "/legal/terms-of-agreement",
-    "_name": "_12b47505"
+    "_name": "_5ec6425f"
   },
   {
     "name": "admin-faq-manager___fa",
     "path": "/fa/admin/faq-manager",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\faq-manager.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\faq-manager.vue",
     "chunkName": "pages/admin/faq-manager",
     "url": "/fa/admin/faq-manager",
-    "_name": "_0206f476"
+    "_name": "_d908acaa"
   },
   {
     "name": "admin-gender___fa",
     "path": "/fa/admin/gender",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\gender.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\gender.vue",
     "chunkName": "pages/admin/gender",
     "url": "/fa/admin/gender",
-    "_name": "_058d3f7c"
+    "_name": "_6260e49c"
   },
   {
     "name": "admin-language-manager___fa",
     "path": "/fa/admin/language-manager",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\language-manager.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\language-manager.vue",
     "chunkName": "pages/admin/language-manager",
     "url": "/fa/admin/language-manager",
-    "_name": "_be77ce0e"
+    "_name": "_45bd74d3"
   },
   {
     "name": "admin-lessons___fa",
     "path": "/fa/admin/lessons",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\lessons.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\lessons.vue",
     "chunkName": "pages/admin/lessons",
     "url": "/fa/admin/lessons",
-    "_name": "_c86efdec"
+    "_name": "_48dcf020"
   },
   {
     "name": "admin-notification___fa",
     "path": "/fa/admin/notification",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\notification.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\notification.vue",
     "chunkName": "pages/admin/notification",
     "url": "/fa/admin/notification",
-    "_name": "_6de2deac"
+    "_name": "_69483786"
+  },
+  {
+    "name": "admin-online-user___fa",
+    "path": "/fa/admin/online-user",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\online-user.vue",
+    "chunkName": "pages/admin/online-user",
+    "url": "/fa/admin/online-user",
+    "_name": "_9ad4558c"
+  },
+  {
+    "name": "admin-report-dashboard___fa",
+    "path": "/fa/admin/report-dashboard",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\report-dashboard.vue",
+    "chunkName": "pages/admin/report-dashboard",
+    "url": "/fa/admin/report-dashboard",
+    "_name": "_3308be56"
   },
   {
     "name": "admin-reviews___fa",
     "path": "/fa/admin/reviews",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\reviews.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\reviews.vue",
     "chunkName": "pages/admin/reviews",
     "url": "/fa/admin/reviews",
-    "_name": "_74f8ea2c"
+    "_name": "_054c91d0"
   },
   {
     "name": "admin-university___fa",
     "path": "/fa/admin/university",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\university.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\university.vue",
     "chunkName": "pages/admin/university",
     "url": "/fa/admin/university",
-    "_name": "_62ffcd0f"
+    "_name": "_25b99469"
   },
   {
     "name": "admin-user-change___fa",
     "path": "/fa/admin/user-change",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\user-change.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\user-change.vue",
     "chunkName": "pages/admin/user-change",
     "url": "/fa/admin/user-change",
-    "_name": "_9812307e"
+    "_name": "_48760ba7"
   },
   {
     "name": "admin-users___fa",
     "path": "/fa/admin/users",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\users.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\users.vue",
     "chunkName": "pages/admin/users",
     "url": "/fa/admin/users",
-    "_name": "_56432fd2"
+    "_name": "_1e301f06"
   },
   {
     "name": "legal-privacy-policy___fa",
     "path": "/fa/legal/privacy-policy",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\legal\\\\privacy-policy.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\legal\\\\privacy-policy.vue",
     "chunkName": "pages/legal/privacy-policy",
     "url": "/fa/legal/privacy-policy",
-    "_name": "_b12e79fc"
+    "_name": "_5edb4d5c"
   },
   {
     "name": "legal-terms-of-agreement___fa",
     "path": "/fa/legal/terms-of-agreement",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\legal\\\\terms-of-agreement.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\legal\\\\terms-of-agreement.vue",
     "chunkName": "pages/legal/terms-of-agreement",
     "url": "/fa/legal/terms-of-agreement",
-    "_name": "_12b47505"
+    "_name": "_5ec6425f"
   },
   {
     "name": "admin-faq-manager___fr",
     "path": "/fr/admin/faq-manager",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\faq-manager.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\faq-manager.vue",
     "chunkName": "pages/admin/faq-manager",
     "url": "/fr/admin/faq-manager",
-    "_name": "_0206f476"
+    "_name": "_d908acaa"
   },
   {
     "name": "admin-gender___fr",
     "path": "/fr/admin/gender",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\gender.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\gender.vue",
     "chunkName": "pages/admin/gender",
     "url": "/fr/admin/gender",
-    "_name": "_058d3f7c"
+    "_name": "_6260e49c"
   },
   {
     "name": "admin-language-manager___fr",
     "path": "/fr/admin/language-manager",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\language-manager.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\language-manager.vue",
     "chunkName": "pages/admin/language-manager",
     "url": "/fr/admin/language-manager",
-    "_name": "_be77ce0e"
+    "_name": "_45bd74d3"
   },
   {
     "name": "admin-lessons___fr",
     "path": "/fr/admin/lessons",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\lessons.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\lessons.vue",
     "chunkName": "pages/admin/lessons",
     "url": "/fr/admin/lessons",
-    "_name": "_c86efdec"
+    "_name": "_48dcf020"
   },
   {
     "name": "admin-notification___fr",
     "path": "/fr/admin/notification",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\notification.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\notification.vue",
     "chunkName": "pages/admin/notification",
     "url": "/fr/admin/notification",
-    "_name": "_6de2deac"
+    "_name": "_69483786"
+  },
+  {
+    "name": "admin-online-user___fr",
+    "path": "/fr/admin/online-user",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\online-user.vue",
+    "chunkName": "pages/admin/online-user",
+    "url": "/fr/admin/online-user",
+    "_name": "_9ad4558c"
+  },
+  {
+    "name": "admin-report-dashboard___fr",
+    "path": "/fr/admin/report-dashboard",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\report-dashboard.vue",
+    "chunkName": "pages/admin/report-dashboard",
+    "url": "/fr/admin/report-dashboard",
+    "_name": "_3308be56"
   },
   {
     "name": "admin-reviews___fr",
     "path": "/fr/admin/reviews",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\reviews.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\reviews.vue",
     "chunkName": "pages/admin/reviews",
     "url": "/fr/admin/reviews",
-    "_name": "_74f8ea2c"
+    "_name": "_054c91d0"
   },
   {
     "name": "admin-university___fr",
     "path": "/fr/admin/university",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\university.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\university.vue",
     "chunkName": "pages/admin/university",
     "url": "/fr/admin/university",
-    "_name": "_62ffcd0f"
+    "_name": "_25b99469"
   },
   {
     "name": "admin-user-change___fr",
     "path": "/fr/admin/user-change",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\user-change.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\user-change.vue",
     "chunkName": "pages/admin/user-change",
     "url": "/fr/admin/user-change",
-    "_name": "_9812307e"
+    "_name": "_48760ba7"
   },
   {
     "name": "admin-users___fr",
     "path": "/fr/admin/users",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\admin\\\\users.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\admin\\\\users.vue",
     "chunkName": "pages/admin/users",
     "url": "/fr/admin/users",
-    "_name": "_56432fd2"
+    "_name": "_1e301f06"
   },
   {
     "name": "legal-privacy-policy___fr",
     "path": "/fr/legal/privacy-policy",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\legal\\\\privacy-policy.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\legal\\\\privacy-policy.vue",
     "chunkName": "pages/legal/privacy-policy",
     "url": "/fr/legal/privacy-policy",
-    "_name": "_b12e79fc"
+    "_name": "_5edb4d5c"
   },
   {
     "name": "legal-terms-of-agreement___fr",
     "path": "/fr/legal/terms-of-agreement",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\legal\\\\terms-of-agreement.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\legal\\\\terms-of-agreement.vue",
     "chunkName": "pages/legal/terms-of-agreement",
     "url": "/fr/legal/terms-of-agreement",
-    "_name": "_12b47505"
+    "_name": "_5ec6425f"
   },
   {
     "name": "tutor-id___fa",
     "path": "/fa/tutor/:id",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor\\\\_id\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor\\\\_id\\\\index.vue",
     "chunkName": "pages/tutor/_id/index",
-    "_name": "_3809ac80"
+    "_name": "_b2961dcc"
   },
   {
     "name": "tutors-id___fa",
     "path": "/fa/tutors/:id?",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutors\\\\_id.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutors\\\\_id.vue",
     "chunkName": "pages/tutors/_id",
-    "_name": "_32be2be2"
+    "_name": "_e69c862e"
   },
   {
     "name": "tutor-id___fr",
     "path": "/fr/tutor/:id",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor\\\\_id\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor\\\\_id\\\\index.vue",
     "chunkName": "pages/tutor/_id/index",
-    "_name": "_3809ac80"
+    "_name": "_b2961dcc"
   },
   {
     "name": "tutors-id___fr",
     "path": "/fr/tutors/:id?",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutors\\\\_id.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutors\\\\_id.vue",
     "chunkName": "pages/tutors/_id",
-    "_name": "_32be2be2"
+    "_name": "_e69c862e"
   },
   {
     "name": "tutor-id___en",
     "path": "/tutor/:id",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutor\\\\_id\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutor\\\\_id\\\\index.vue",
     "chunkName": "pages/tutor/_id/index",
-    "_name": "_3809ac80"
+    "_name": "_b2961dcc"
   },
   {
     "name": "tutors-id___en",
     "path": "/tutors/:id?",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\tutors\\\\_id.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\tutors\\\\_id.vue",
     "chunkName": "pages/tutors/_id",
-    "_name": "_32be2be2"
+    "_name": "_e69c862e"
   },
   {
     "name": "index___en",
     "path": "/",
-    "component": "C:\\\\Repository\\\\teach\\\\pages\\\\index.vue",
+    "component": "C:\\\\Repositorys\\\\Gits\\\\teach\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "url": "/",
-    "_name": "_7decaf84"
+    "_name": "_2b39a444"
   }
 ]

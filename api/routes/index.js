@@ -23,6 +23,7 @@ const userController = require('../controllers/user');
 const roleController = require('../controllers/role');
 const messageController = require('../controllers/message');
 const universityController = require('../controllers/university');
+const universityAdminController = require('../controllers/admin/university');
 const subjectController =  require('../controllers/subject')
 const certController =  require('../controllers/cert')
 const experienceController =  require('../controllers/experience')
@@ -38,6 +39,7 @@ const faqController = require("../controllers/admin/faq");
 const reviewController = require("../controllers/review");
 const languageController = require("../controllers/admin/langugeManager");
 const myLessonsController = require("../controllers/mylessons");
+const userReportController = require("../controllers/admin/userReports");
 
 const {Response} = require("express");
 
@@ -101,6 +103,11 @@ router.post('/user/getTutor',  userController.getTutor);
 router.post('/user/tutors',  userController.getTutors);
 router.post('/user/get-transcript',[jwt.checkAuth],  userController.getUserTranscript);
 router.post('/user/save-transcript',[jwt.checkAuth],upload.single('file') ,  userController.saveUserTranscript);
+router.post('/user/set-status-transcript',[jwt.checkAuth, jwt.hasRole('admin')],  userController.getUserTranscript);
+router.post('/user/set-online-user',  userController.setOnlineUser);
+router.post('/user/get-online-user',[jwt.checkAuth,jwt.hasRole('admin')],  adminUsersController.getOnlineUser);
+
+
 router.post('/user/getTutorStatus',[jwt.checkAuth] ,  userController.getTutorStatus);
 router.post('/user/reSendVerificationEmail',[jwt.checkAuth] ,  userController.reSendVerificationEmail);
 router.post('/user/refreshLogin',[jwt.checkAuth] ,  userController.refreshLogin);
@@ -127,7 +134,10 @@ router.post('/faq/getAllEnabled', faqController.getAllEnabled);
 
 router.post('/messages',[jwt.checkAuth], messageController.getAll);
 router.post('/message/create', [util.captcha] ,  messageController.create);
-// router.post('/university/create',[jwt.checkAuth , jwt.hasRole("admin1")]  ,  universityController.create);
+
+//university
+router.post('/university/getUserUniversity',[jwt.checkAuth ]  ,  universityController.getUserUniversity);
+router.post('/university/delete-university',[jwt.checkAuth ], [jwt.hasRole("admin")]  ,  universityAdminController.deleteUniversity);
 
 //subject
 router.post('/subject/subjectList'  ,[jwt.checkAuth] ,  subjectController.subjectList);
@@ -145,6 +155,7 @@ router.post('/subject/create',[jwt.checkAuth]  ,  subjectController.create);
 router.post('/subject/delete',[jwt.checkAuth]  ,  subjectController.delete);
 router.post('/timing/save-tutor-timing'  ,[jwt.checkAuth] ,  tutorTimingController.saveTiming);
 router.post('/timing/getTiming'  ,[jwt.checkAuth] ,  tutorTimingController.getTiming);
+router.post('/timing/get-timing-count',[jwt.checkAuth,jwt.hasRole('tutor')] ,  tutorTimingController.getTimingCount);
 
 
 //certificate
@@ -168,15 +179,20 @@ router.post('/users/list',[jwt.checkAuth]  , [jwt.hasRole("admin")], adminUsersC
 router.post('/users/setRole',[jwt.checkAuth] ,[jwt.hasRole("admin")] ,  adminUsersController.setRole);
 router.post('/definitions/getAllLessons' , definitionsController.getAllLessons);
 router.post('/definitions/createLesson',[jwt.checkAuth],[jwt.hasRole("admin")]   ,  definitionsController.createLesson);
-router.post('/definitions/createLessonBulk',[jwt.checkAuth],[jwt.hasRole("admin")]   ,  definitionsController.createLessonBulk);
-router.post('/definitions/editLesson',[jwt.checkAuth]   ,  definitionsController.editLesson);
+router.post('/definitions/createLessonBulk',[jwt.checkAuth],[jwt.hasRole("admin")]  , upload.single('file') ,  definitionsController.createLessonBulk);
+router.post('/definitions/editLesson',[jwt.checkAuth] ,[jwt.hasRole("admin")]  ,  definitionsController.editLesson);
+router.post('/definitions/delete-lesson',[jwt.checkAuth] ,[jwt.hasRole("admin")]  ,  definitionsController.deleteLesson);
+
 router.post('/definitions/lessonList' ,  definitionsController.lessonList);
 router.post('/definitions/universityList',  definitionsController.universityList);
-router.post('/definitions/createUny',[jwt.checkAuth] , [jwt.hasRole("admin")]  ,  definitionsController.createUniversity);
-router.post('/definitions/editUny',[jwt.checkAuth] , [jwt.hasRole("admin")]  ,  definitionsController.editUniversity);
+router.post('/definitions/createUny',[jwt.checkAuth] , [jwt.hasRole("admin")]  ,  universityAdminController.createUniversity);
+router.post('/definitions/editUny',[jwt.checkAuth] , [jwt.hasRole("admin")]  ,  universityAdminController.editUniversity);
 router.post('/users/changes',[jwt.checkAuth] , [jwt.hasRole("admin")]  ,  adminUsersController.changes);
 router.post('/users/changeStatus',[jwt.checkAuth] , [jwt.hasRole("admin")]  ,  adminUsersController.changeStatus);
 router.post('/users/changeCount',[jwt.checkAuth] , [jwt.hasRole("admin")]  ,  adminUsersController.changeCount);
+router.post('/users/getCurrentUser',[jwt.checkAuth],  userController.getCurrentUser);
+router.post('/users/changeSendEmailOnNewRequest',[jwt.checkAuth],  userController.changeSendEmailOnNewRequest);
+router.post('/users/changeSendEmailOnNewMessage',[jwt.checkAuth],  userController.changeSendEmailOnNewMessage);
 
 
 router.post("/permisson/hasPermission", permissonHelper.hasPermission);
@@ -220,6 +236,10 @@ router.post("/notification/get-all" ,[jwt.checkAuth] , notificationController.ge
 router.post("/notification/get-admin-notifications" ,[jwt.checkAuth] ,  [jwt.hasRole("admin")], notificationController.getAdminAllNotification)
 
 
+router.post("/report/report-request-take" ,[jwt.checkAuth] ,  [jwt.hasRole("admin")], userReportController.requestForTakeCount)
+router.post("/report/report-request-rejected" ,[jwt.checkAuth] ,  [jwt.hasRole("admin")], userReportController.rejectedRequestCount)
+router.post("/report/report-request-accepted" ,[jwt.checkAuth] ,  [jwt.hasRole("admin")], userReportController.acceptedRequestCount)
+router.post("/report/report-users" ,[jwt.checkAuth] ,  [jwt.hasRole("admin")], userReportController.getUserReport)
 
 module.exports = router
 

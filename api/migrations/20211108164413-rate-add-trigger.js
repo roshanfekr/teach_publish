@@ -2,9 +2,8 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    const db = require("../models")
 
-    await db.sequelize.query("CREATE TRIGGER rates_after_insert AFTER INSERT ON Rates\n" +
+    await queryInterface.sequelize.query("CREATE TRIGGER rates_after_insert AFTER INSERT ON Rates\n" +
       "FOR EACH ROW \n" +
       "BEGIN\n" +
       "\tDECLARE avg_rate FLOAT;\n" +
@@ -23,7 +22,7 @@ module.exports = {
       "\tEND IF;\n" +
       "END" )
 
-    await db.sequelize.query("CREATE TRIGGER rates_after_update AFTER UPDATE ON Rates\n" +
+    await queryInterface.sequelize.query("CREATE TRIGGER rates_after_update AFTER UPDATE ON Rates\n" +
       "FOR EACH ROW \n" +
       "BEGIN\n" +
       "\tDECLARE avg_rate FLOAT;\n" +
@@ -43,7 +42,7 @@ module.exports = {
       "END" )
 
 
-    await db.sequelize.query("CREATE TRIGGER rates_after_delete AFTER DELETE ON Rates\n" +
+    await queryInterface.sequelize.query("CREATE TRIGGER rates_after_delete AFTER DELETE ON Rates\n" +
       "FOR EACH ROW \n" +
       "BEGIN\n" +
       "\tDECLARE avg_rate FLOAT;\n" +
