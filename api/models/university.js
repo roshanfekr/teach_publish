@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       University.hasMany(models.Lesson);
+
     }
   };
   University.init({

@@ -14,7 +14,7 @@ module.exports = {
           var names = item.split(" ");
           if (names.length === 2)
           {
-            lessons.push({subject: item, code: names[0], isenable: true})
+            lessons.push({subject: item, code: item, isenable: true})
           }
         }
       })

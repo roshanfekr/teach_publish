@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[53],{686:function(n,e,c){"use strict";c.r(e);var t={name:"Index"},o=c(80),component=Object(o.a)(t,(function(){return(0,this._self._c)("b-container",[this._v("\n  Hi Welcome To calendar\n")])}),[],!1,null,"07ed0d2c",null);e.default=component.exports}}]);

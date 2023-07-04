@@ -1,9 +1,34 @@
-import { wrapFunctional } from './utils'
+export const IoSocketStatus = () => import('../..\\node_modules\\nuxt-socket-io\\lib\\components\\SocketStatus.js' /* webpackChunkName: "components/io-socket-status" */).then(c => wrapFunctional(c.default || c))
+export const Booklesson = () => import('../..\\components\\booklesson.vue' /* webpackChunkName: "components/booklesson" */).then(c => wrapFunctional(c.default || c))
+export const Logo = () => import('../..\\components\\Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c))
 
-export { default as IoSocketStatus } from '../..\\node_modules\\nuxt-socket-io\\lib\\components\\SocketStatus.js'
-export { default as Booklesson } from '../..\\components\\booklesson.vue'
-export { default as Logo } from '../..\\components\\Logo.vue'
+// nuxt/nuxt.js#8607
+function wrapFunctional(options) {
+  if (!options || !options.functional) {
+    return options
+  }
 
-export const LazyIoSocketStatus = import('../..\\node_modules\\nuxt-socket-io\\lib\\components\\SocketStatus.js' /* webpackChunkName: "components/io-socket-status" */).then(c => wrapFunctional(c.default || c))
-export const LazyBooklesson = import('../..\\components\\booklesson.vue' /* webpackChunkName: "components/booklesson" */).then(c => wrapFunctional(c.default || c))
-export const LazyLogo = import('../..\\components\\Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c))
+  const propKeys = Array.isArray(options.props) ? options.props : Object.keys(options.props || {})
+
+  return {
+    render(h) {
+      const attrs = {}
+      const props = {}
+
+      for (const key in this.$attrs) {
+        if (propKeys.includes(key)) {
+          props[key] = this.$attrs[key]
+        } else {
+          attrs[key] = this.$attrs[key]
+        }
+      }
+
+      return h(options, {
+        on: this.$listeners,
+        attrs,
+        props,
+        scopedSlots: this.$scopedSlots,
+      }, this.$slots.default)
+    }
+  }
+}

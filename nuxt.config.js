@@ -97,7 +97,7 @@ export default {
     // module options
     sockets: [{
       name: 'home',
-      url: 'http://localhost:3000',
+      url: 'http://localhost:2968',
       default: true,
       vuex: { /* see section below */ },
       namespaces: { /* see section below */ },
@@ -206,7 +206,7 @@ export default {
     // }
   },
   server: {
-    port: 6386, // default: 3000
+    port: 2968, // default: 3000
     host: 'localhost' // default: localhost
   }
 }

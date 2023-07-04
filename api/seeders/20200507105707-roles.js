@@ -9,6 +9,8 @@ module.exports = {
       name: "tutor",
     },{
       name: "student",
+    },{
+      name: "guest",
     }], {});
 
   },

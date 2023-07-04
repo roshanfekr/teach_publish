@@ -1,13 +1,13 @@
 exports.ids = [2];
 exports.modules = {
 
-/***/ 233:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(234);
+var content = __webpack_require__(237);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -15,26 +15,26 @@ __webpack_require__(8).default("2cf1b3e9", content, true)
 
 /***/ }),
 
-/***/ 234:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(7);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".socket-status.label{width:100%;text-align:left}.socket-status.grid{display:grid;grid-template-columns:1fr 1fr}.socket-status.grid:hover{color:#212529;background-color:rgba(0,0,0,.075)}.socket-status.striped:nth-of-type(odd){background-color:rgba(0,0,0,.05)}.socket-status.col-key{grid-column:1;font-weight:700;text-align:right;padding:.75rem;border-top:1px solid #dee2e6}.socket-status.col-val{grid-column:2;text-align:left;padding:.75rem;border-top:1px solid #dee2e6}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".socket-status.label {\n  width: 100%;\n  text-align: left;\n}\n\n.socket-status.grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}\n\n.socket-status.grid:hover {\n  color: #212529;\n  background-color: rgba(0, 0, 0, 0.075);\n}\n\n.socket-status.striped:nth-of-type(odd) {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n\n.socket-status.col-key {\n  grid-column: 1;\n  font-weight: bold;\n  text-align: right;\n  padding: 0.75rem;\n  border-top: 1px solid #dee2e6;\n}\n\n.socket-status.col-val {\n  grid-column: 2;\n  text-align: left;\n  padding: 0.75rem;\n  border-top: 1px solid #dee2e6;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 237:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SocketStatus_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(233);
+/* harmony import */ var _SocketStatus_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(236);
 /* harmony import */ var _SocketStatus_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_SocketStatus_css__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({

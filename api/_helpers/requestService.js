@@ -75,7 +75,7 @@ module.exports = {
         }
         let sql = 'SELECT r.d , COUNT(id) AS count , r.`type` FROM \n' +
           ' (SELECT date(req.createdAt) AS d, (req.id) , req.`type`\n' +
-          ' FROM requests AS req WHERE ( req.`type` > 0) and (req.senderId = :userId OR :userId = 0)' +
+          ' FROM Requests AS req WHERE ( req.`type` > 0) and (req.senderId = :userId OR :userId = 0)' +
           ' and req.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND req.createdAt <=NOW() ) AS r \n' +
           ' GROUP BY r.d ,r.`type` order by r.d'
 
@@ -83,7 +83,7 @@ module.exports = {
           sql = 'SELECT r.w ,r.d , COUNT(id) AS count , r.`type` , r.d1 FROM \n' +
             ' (SELECT week(req.createdAt) as w , CONCAT( year(req.createdAt)  , \'-\', month(req.createdAt)) AS d, date(req.createdAt) as d1' +
             ', (req.id) , req.`type`\n' +
-            ' FROM requests AS req WHERE ( req.`type` > 0) and (req.senderId = :userId OR :userId = 0) ' +
+            ' FROM Requests AS req WHERE ( req.`type` > 0) and (req.senderId = :userId OR :userId = 0) ' +
             ' and req.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) ' +
             ' AND req.createdAt <=NOW() ) AS r \n' +
             ' GROUP BY r.d , r.`type` order by r.d1'
@@ -92,7 +92,7 @@ module.exports = {
         else if (dateType === DateTypeEnum.YEARLY){
           sql = 'SELECT r.d , COUNT(id) AS count , r.`type` FROM\n' +
             '(SELECT year(req.createdAt)  AS d, (req.id) , req.`type` \n' +
-            'FROM requests AS req WHERE req.`type` > 0 and (req.senderId = :userId OR :userId = 0) and ' +
+            'FROM Requests AS req WHERE req.`type` > 0 and (req.senderId = :userId OR :userId = 0) and ' +
             'req.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND\n' +
             ' req.createdAt <=NOW() ) AS r \n' +
             'GROUP BY r.d , r.`type` order by r.d\n'
@@ -147,14 +147,14 @@ module.exports = {
 
         let sql = '(SELECT r.d, r.name , COUNT(id) AS count FROM \n' +
           '(SELECT  DATE(usr.createdAt) AS d,  (usr.id) , role.name\n' +
-          'FROM users AS usr JOIN userroles AS ur ON usr.id = ur.userId JOIN roles AS role ON role.id = ur.roleId\n' +
+          'FROM Users AS usr JOIN UserRoles AS ur ON usr.id = ur.userId JOIN Roles AS role ON role.id = ur.roleId\n' +
           'WHERE (role.name = \'\' OR \'\' = \'\' ) AND  usr.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND usr.createdAt <= NOW() ) AS r \n' +
           'GROUP BY r.d , r.name ORDER BY r.d)\n' +
           'UNION\n' +
           '(SELECT r.d, r.name , COUNT(r.d) AS count FROM \n' +
           '(SELECT   DATE(usr.createdAt) AS d,  (usr.id) ,\'guest\' AS `name` \n' +
           'FROM \n' +
-          '(SELECT * FROM onlineusers AS online WHERE NOT EXISTS(SELECT users.id FROM users WHERE online.email = users.email))\n' +
+          '(SELECT * FROM OnlineUsers AS online WHERE NOT EXISTS(SELECT Users.id FROM Users WHERE online.email = Users.email))\n' +
           ' AS usr \n' +
           'WHERE   usr.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND usr.createdAt <= NOW() ) AS r \n' +
           'GROUP BY r.d , r.name ORDER BY r.d)'
@@ -162,14 +162,14 @@ module.exports = {
         if (dateType === DateTypeEnum.MONTHLY){
           sql = '(SELECT r.d, r.name , COUNT(id) AS count FROM \n' +
             '(SELECT   DATE(usr.createdAt) AS da ,CONCAT(year(usr.createdAt) , "-" , month(usr.createdAt)) AS d,  (usr.id) , role.name\n' +
-            'FROM users AS usr JOIN userroles AS ur ON usr.id = ur.userId JOIN roles AS role ON role.id = ur.roleId\n' +
+            'FROM Users AS usr JOIN UserRoles AS ur ON usr.id = ur.userId JOIN Roles AS role ON role.id = ur.roleId\n' +
             'WHERE (role.name = \'\' OR \'\' = \'\' ) AND  usr.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND usr.createdAt <= NOW() ) AS r \n' +
             'GROUP BY r.d , r.name ORDER BY r.da)\n' +
             'UNION\n' +
             '(SELECT r.d, r.name , COUNT(r.d) AS count FROM \n' +
             '(SELECT    DATE(usr.createdAt) AS da ,CONCAT(year(usr.createdAt) , "-" , month(usr.createdAt)) AS d,  (usr.id) ,\'guest\' AS `name` \n' +
             'FROM \n' +
-            '(SELECT * FROM onlineusers AS online WHERE NOT EXISTS(SELECT users.id FROM users WHERE online.email = users.email))\n' +
+            '(SELECT * FROM OnlineUsers AS online WHERE NOT EXISTS(SELECT Users.id FROM Users WHERE online.email = Users.email))\n' +
             ' AS usr \n' +
             'WHERE   usr.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND usr.createdAt <= NOW() ) AS r \n' +
             'GROUP BY r.d , r.name ORDER BY r.da)'
@@ -177,14 +177,14 @@ module.exports = {
         else if (dateType === DateTypeEnum.YEARLY){
           sql = '(SELECT r.d, r.name , COUNT(id) AS count FROM \n' +
             '(SELECT year(usr.createdAt) AS d,  (usr.id) , role.name\n' +
-            'FROM users AS usr JOIN userroles AS ur ON usr.id = ur.userId JOIN roles AS role ON role.id = ur.roleId\n' +
+            'FROM Users AS usr JOIN UserRoles AS ur ON usr.id = ur.userId JOIN  Roles AS role ON role.id = ur.roleId\n' +
             'WHERE  usr.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND usr.createdAt <= NOW() ) AS r \n' +
             'GROUP BY r.d , r.name ORDER BY r.d)\n' +
             'UNION\n' +
             '(SELECT r.d, r.name , COUNT(r.d) AS count FROM \n' +
             '(SELECT year(usr.createdAt) AS d,  (usr.id) ,\'guest\' AS `name` \n' +
             'FROM \n' +
-            '(SELECT * FROM onlineusers AS online WHERE NOT EXISTS(SELECT users.id FROM users WHERE online.email = users.email))\n' +
+            '(SELECT * FROM OnlineUsers AS online WHERE NOT EXISTS(SELECT Users.id FROM Users WHERE online.email = Users.email))\n' +
             ' AS usr \n' +
             'WHERE   usr.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND usr.createdAt <= NOW() ) AS r \n' +
             'GROUP BY r.d , r.name ORDER BY r.d)'
@@ -233,7 +233,7 @@ module.exports = {
 
         await db.sequelize.query('SELECT r.year , r.month , r.day , COUNT(id) AS count FROM \n' +
           '(SELECT YEAR(req.createdAt) AS year, MONTH(req.createdAt) AS month , Day(req.createdAt) AS day, (req.id) \n' +
-          'FROM requests AS req WHERE  req.`type` = :reqType and (req.senderId = 64 OR :userId = 0) and req.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND req.createdAt <= NOW() ) AS r \n' +
+          'FROM Requests AS req WHERE  req.`type` = :reqType and (req.senderId = 64 OR :userId = 0) and req.createdAt >= DATE_SUB(NOW(), INTERVAL :day DAY) AND req.createdAt <= NOW() ) AS r \n' +
           'GROUP BY r.day'
           , {replacements: {day: day ,userId: userId , reqType: reqTypeEnum}, type: QueryTypes.SELECT}
 

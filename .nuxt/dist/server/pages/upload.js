@@ -1,58 +1,66 @@
 exports.ids = [42];
 exports.modules = {
 
-/***/ 261:
+/***/ 264:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/upload.vue?vue&type=template&id=6a1c5c21&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('b-form',{staticClass:"m-right",attrs:{"enctype":"multipart/form-data"},on:{"submit":function($event){$event.stopPropagation();$event.preventDefault();return _vm.onSubmit.apply(null, arguments)}}},[_c('h1',[_vm._v("\n    Upload files\n  ")]),_vm._v(" "),_c('input',{attrs:{"type":"file","name":"file"},on:{"change":function($event){return _vm.filesChange($event.target.name, $event.target.files)}}})])],1)}
-var staticRenderFns = []
-
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/upload.vue?vue&type=template&id=6a1c5c21&scoped=true&
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', [_c('b-form', {
+    staticClass: "m-right",
+    attrs: {
+      "enctype": "multipart/form-data"
+    },
+    on: {
+      "submit": function ($event) {
+        $event.stopPropagation();
+        $event.preventDefault();
+        return _vm.onSubmit.apply(null, arguments);
+      }
+    }
+  }, [_c('h1', [_vm._v("\n    Upload files\n  ")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "file",
+      "name": "file"
+    },
+    on: {
+      "change": function ($event) {
+        return _vm.filesChange($event.target.name, $event.target.files);
+      }
+    }
+  })])], 1);
+};
+var staticRenderFns = [];
 
 // CONCATENATED MODULE: ./pages/upload.vue?vue&type=template&id=6a1c5c21&scoped=true&
 
 // EXTERNAL MODULE: external "axios"
-var external_axios_ = __webpack_require__(15);
+var external_axios_ = __webpack_require__(17);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/upload.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ var uploadvue_type_script_lang_js_ = ({
   name: 'App',
-
   data() {
     return {};
   },
-
   methods: {
     onSubmit(evt) {},
-
     filesChange(filename, files) {
       if (!files.length) {
         return;
       }
-
       console.log(filename, files);
       const formData = new FormData();
-
       for (let i = 0; i < files.length; i++) {
         formData.append(filename, files[i], files[i].name);
       }
-
       this.$axios.post('cert/create', formData, {
         onUploadProgress: progress => {
           const {
@@ -71,7 +79,6 @@ var external_axios_ = __webpack_require__(15);
         console.log(err);
       });
     }
-
   }
 });
 // CONCATENATED MODULE: ./pages/upload.vue?vue&type=script&lang=js&
@@ -97,7 +104,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "6a1c5c21",
-  "ee6b927a"
+  "3a879541"
   
 )
 
